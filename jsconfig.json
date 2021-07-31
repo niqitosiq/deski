@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"],
+      "@ui/*": ["./src/components/ui/*"],
+      "@directives/*": ["./src/directives/*"],
+      "@consts/*": ["./src/consts/*"],
+      "@styles/*": ["./src/styles/*"]
+    }
+  },
+  "exclude": ["node_modules", "__sapper__"]
+}
