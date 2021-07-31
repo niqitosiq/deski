@@ -48,6 +48,9 @@
       position: relative;
       margin-top: 40px;
     }
+    @media screen and (max-width: 420px) {
+      margin-top: 10px;
+    }
   }
 
   .glow {

@@ -67,6 +67,9 @@
     @media screen and (max-width: 920px) {
       flex-direction: column;
     }
+    @media screen and (max-width: 420px) {
+      padding-top: 30px;
+    }
   }
 
   .title {
@@ -125,6 +128,10 @@
     color: var(--text-transparent);
     margin-top: 30px;
     margin-bottom: 60px;
+    @media screen and (max-width: 420px) {
+      margin-bottom: 20px;
+      margin-top: 10px;
+    }
   }
 
   .lead {
