@@ -1,7 +1,9 @@
 <script>
+  import Header from '@/components/basic/Header/Header.svelte'
 </script>
 
 <main>
+  <Header />
   <slot />
 </main>
 
