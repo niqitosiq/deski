@@ -1,6 +1,7 @@
 @import 'normalize.scss/normalize';
 @import './fonts';
 @import './animation';
+@import './variables';
 
 @include font-face(
   Gilroy,
@@ -33,12 +34,6 @@
   normal,
   woff2 woff eot ttf svg
 );
-
-// Variables
-:root {
-  --accent: #de031c;
-  --container-width: 1246px;
-}
 
 * {
   box-sizing: border-box;
