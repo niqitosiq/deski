@@ -1,28 +1,27 @@
 <script>
-  import Button from './Button.svelte';
-  export let menuOpened = false;
+  export let menuOpened = false
 
-  let lines = 5;
+  let lines = 5
 
   const toogleMenu = () => {
-    menuOpened = !menuOpened;
-  };
+    menuOpened = !menuOpened
+  }
 </script>
 
-<div class="burger" class:active={menuOpened}>
-  <Button on:click={toogleMenu}>
-    <div class="lines" slot="custom">
-      {#each Array(lines) as _, line}
-        <div class={`line line-${line + 1}`} />
-      {/each}
-    </div>
-  </Button>
+<div class="burger" class:active={menuOpened} on:click={toogleMenu}>
+  <div class="lines">
+    {#each Array(lines) as _, line}
+      <div class={`line line-${line + 1}`} />
+    {/each}
+  </div>
 </div>
 
 <style lang="scss">
   .burger {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     position: relative;
-    margin-top: 5px;
     width: 50px;
     height: 50px;
     &.active {
@@ -70,7 +69,7 @@
   .line {
     width: 100%;
     height: 2px;
-    background-color: var(--white);
+    background-color: #fff;
     position: absolute;
     border-radius: 2px;
     /* burger */

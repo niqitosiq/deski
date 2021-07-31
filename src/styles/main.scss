@@ -18,7 +18,7 @@ body {
     'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'Helvetica Neue',
     Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
     'Segoe UI Symbol';
-  color: var(--text-gray);
+  color: var(--text);
   font-weight: 700;
   font-size: 14px;
   padding-bottom: 100px;
@@ -33,6 +33,9 @@ b {
   margin: 0 auto;
   width: calc(100% - 20px);
   max-width: var(--container-width);
+  @media screen and (max-width: 1800px) {
+    width: calc(100% - 150px);
+  }
   @media screen and (max-width: 620px) {
     width: calc(100% - 50px);
   }
