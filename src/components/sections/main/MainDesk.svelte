@@ -25,9 +25,29 @@
 <style lang="scss">
   .main-desk {
     position: relative;
-    flex-shrink: 0;
+    display: flex;
+    align-items: center;
     width: 100%;
     max-width: 680px;
+    :global(.wrapper) {
+      height: auto;
+    }
+    @media screen and (max-width: 1240px) {
+      position: absolute;
+      width: 100%;
+      max-width: 600px;
+      right: 0px;
+      bottom: 0px;
+      z-index: 1;
+    }
+    @media screen and (max-width: 1040px) {
+      max-width: 60%;
+    }
+    @media screen and (max-width: 920px) {
+      max-width: 100%;
+      position: relative;
+      margin-top: 40px;
+    }
   }
 
   .glow {
@@ -41,6 +61,10 @@
     border-radius: 610px;
     box-shadow: 0px 0px 100px rgb(78 113 240 / 70%);
     background-color: rgba(78, 113, 240, 0.31);
+    @media screen and (max-width: 1600px) {
+      width: 400px;
+      height: 400px;
+    }
   }
 
   .play {
@@ -48,6 +72,12 @@
     left: 0;
     bottom: 0;
     display: flex;
+
+    @media screen and (max-width: 920px) {
+      left: 50%;
+      bottom: 50%;
+      transform: translate(-50%, -50%);
+    }
 
     :global(svg) {
       width: 24px;
@@ -67,6 +97,9 @@
       width: 30px;
       height: 30px;
       transform: rotate(-5deg);
+    }
+    @media screen and (max-width: 560px) {
+      display: none;
     }
     p {
       flex-shrink: 0;

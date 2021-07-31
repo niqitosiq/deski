@@ -33,6 +33,9 @@
       transition: transform ease 0.3s;
       transform: translateY(-8px);
     }
+    @media screen and (max-width: 420px) {
+      padding: 15px 25px;
+    }
     &:focus {
       outline: 0;
     }
