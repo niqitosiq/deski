@@ -1,21 +1,11 @@
 <script>
-  import { createEventDispatcher } from 'svelte';
-
-  export let type = 'button';
-  export let styling = '';
-
-  const dispatch = createEventDispatcher();
-
-  const emitEvent = (type, event) => {
-    dispatch(type, event);
-  };
+  export let type = 'button'
+  export let styling = ''
 </script>
 
-<button {type} class={styling} on:click={event => emitEvent('click', event)}>
+<button {type} class={styling} on:click>
   <slot name="custom">
-    <span>
-      <slot />
-    </span>
+    <slot />
   </slot>
 </button>
 
@@ -23,23 +13,28 @@
   button {
     position: relative;
     border: none;
-    width: 100%;
-    padding: 24px 24px;
-    font-weight: bold;
-    font-size: 14px;
-    line-height: 17px;
     border-radius: 30px;
     border: none;
     background-color: transparent;
+    padding: 25px 35px;
+    margin-top: 8px;
     > :global(span),
-    > :global(div) {
+    > :global(*) {
+      font-family: Gilroy;
+      font-size: 13px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 16px;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
       display: block;
       position: relative;
       z-index: 5;
-      color: var(--white);
-      font-weight: 700;
       transition: transform ease 0.3s;
-      transform: translateY(-5px);
+      transform: translateY(-8px);
+    }
+    @media screen and (max-width: 420px) {
+      padding: 15px 25px;
     }
     &:focus {
       outline: 0;
@@ -51,11 +46,11 @@
       height: 100%;
       left: 0;
       top: 0;
-      border-radius: 75px;
       transition: transform ease 0.3s;
-      transform: translateY(-5px);
+      transform: translate(-5px, -8px) skew(-5deg, 0deg);
+      border-radius: 4px;
       z-index: 1;
-      background: var(--gradient);
+      background: var(--accent-gradient);
     }
     &:before {
       content: '';
@@ -64,17 +59,43 @@
       height: 100%;
       left: 0;
       top: 0;
-      border-radius: 75px;
       transition: transform ease 0.3s;
+      transform: skew(-5deg, 0deg);
       z-index: 1;
-      background: #b32c2c;
+      border-radius: 4px;
+      background-color: var(--accent-dark);
+      box-shadow: var(--light-shadow);
     }
 
     &:hover {
-      &:after,
+      &:after {
+        transform: translate(-5px, -2px) skew(-5deg, 0deg);
+      }
       > :global(span),
-      > :global(div) {
+      > :global(*) {
         transform: translateY(0);
+      }
+    }
+    &.circle {
+      padding: 22px 25px 25px 20px;
+      &:after,
+      &:before {
+        border-radius: 100%;
+        width: 100%;
+        padding-top: 100%;
+        height: auto;
+      }
+      &:after {
+        transform: translate(-5px, -8px) skew(0deg, 0deg);
+      }
+      &:before {
+        transform: skew(0deg, 0deg);
+      }
+
+      &:hover {
+        &:after {
+          transform: translate(-5px, -2px) skew(0deg, 0deg);
+        }
       }
     }
   }
