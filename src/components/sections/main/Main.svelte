@@ -48,27 +48,26 @@
 
 <style lang="scss">
   .main {
+    margin-top: -160px;
     padding-top: 230px;
     display: flex;
     position: relative;
     justify-content: space-between;
     @media screen and (max-width: 1240px) {
       padding-bottom: 180px;
-      padding-top: 180px;
     }
     @media screen and (max-width: 1040px) {
       padding-bottom: 100px;
-      padding-top: 100px;
     }
     @media screen and (max-width: 980px) {
       padding-bottom: 40px;
-      padding-top: 150px;
     }
     @media screen and (max-width: 920px) {
       flex-direction: column;
     }
     @media screen and (max-width: 420px) {
-      padding-top: 30px;
+      padding-top: 60px;
+      margin-top: 0;
     }
   }
 

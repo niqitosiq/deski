@@ -2,6 +2,15 @@
   import Icon from '@/components/ui/Icon.svelte'
   import Socials from '../Social/Socials.svelte'
   import ContactBadge from '@/components/basic/ContactBadge.svelte'
+  import Button from '@/components/ui/Button.svelte'
+
+  const links = [
+    { link: '#catalog', label: 'Каталог столов' },
+    { link: '#advantages', label: 'Преимущества' },
+    { link: '#delivery', label: 'Доставка и оплата' },
+    { link: '#reviews', label: 'Отзывы' },
+    { link: '#contacts', label: 'Контакты' },
+  ]
 </script>
 
 <header class="header container">
@@ -10,11 +19,11 @@
       <Icon name="logo" />
     </div>
     <ul class="list">
-      <li class="item">Каталог столов</li>
-      <li class="item">Преимущества</li>
-      <li class="item">Доставка и оплата</li>
-      <li class="item">Отзывы</li>
-      <li class="item">Контакты</li>
+      {#each links as link}
+        <li class="item">
+          <a href={link.link}>{link.label}</a>
+        </li>
+      {/each}
     </ul>
   </div>
   <div class="connection">
@@ -27,9 +36,9 @@
       </ContactBadge>
     </div>
     <div class="call">
-      <button type="button" class="button">
-        <p class="order-a-call">ЗАКАЗАТЬ ЗВОНОК</p>
-      </button>
+      <Button styling="light">
+        <span>ЗАКАЗАТЬ ЗВОНОК</span>
+      </Button>
       <p class="seconds">Перезвоним за 30 секунд</p>
     </div>
   </div>
@@ -37,6 +46,8 @@
 
 <style lang="scss">
   .header {
+    z-index: 20;
+    position: relative;
     display: flex;
     justify-content: space-between;
     padding-top: 72px;
@@ -65,9 +76,14 @@
     font-style: normal;
     font-weight: 400;
     text-align: left;
-    color: var(--text-transparent);
+    color: #fff;
+    opacity: 0.4;
+    transition: opacity ease 0.3s;
     &:not(:last-child) {
       margin-right: 50px;
+    }
+    &:hover {
+      opacity: 1;
     }
   }
   .logo {
@@ -160,18 +176,6 @@
       margin-top: 25px;
     }
   }
-  .button {
-    background-color: transparent;
-    margin-bottom: 10px;
-  }
-  .order-a-call {
-    font-family: 'Gilroy';
-    font-size: 13px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: 16px;
-    text-align: left;
-  }
   .seconds {
     font-family: Gilroy;
     font-size: 14px;
@@ -180,5 +184,6 @@
     line-height: 16px;
     color: var(--text-transparent);
     text-align: left;
+    margin-top: 10px;
   }
 </style>

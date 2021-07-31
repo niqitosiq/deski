@@ -98,5 +98,40 @@
         }
       }
     }
+    &.light {
+      margin-top: 0;
+      padding: 15px 25px;
+      > :global(span),
+      > :global(*) {
+        z-index: 5;
+        transform: translateY(3px);
+      }
+      &:after {
+        transform: translate(0px, 0px) skew(-5deg, 0deg);
+        background: transparent;
+        border: solid 2px rgba(102, 146, 255, 0.4);
+      }
+      &:before {
+        background: rgba(102, 146, 255, 1);
+        opacity: 0;
+        box-shadow: none;
+        transition: opacity ease 0.3s;
+        transform: translate(2px, 2px) skew(-5deg, 0deg);
+        border-radius: 3px;
+      }
+
+      &:hover {
+        &:after {
+          transform: translate(0, 0) skew(-5deg, 0deg);
+        }
+        &:before {
+          opacity: 0.1;
+        }
+        > :global(span),
+        > :global(*) {
+          transform: translateY(3px);
+        }
+      }
+    }
   }
 </style>
