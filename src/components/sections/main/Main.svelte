@@ -6,7 +6,7 @@
   import MainDesk from './MainDesk.svelte'
 </script>
 
-<div class="main">
+<div class="main" id="main">
   <div class="background">
     <Image src="/img/decor/glow.png" />
   </div>
