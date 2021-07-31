@@ -11,7 +11,4 @@
 </div>
 
 <style lang="scss">
-  .index {
-    background-color: #000;
-  }
 </style>

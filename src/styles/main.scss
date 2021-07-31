@@ -3,38 +3,6 @@
 @import './animation';
 @import './variables';
 
-@include font-face(
-  Gilroy,
-  '/fonts/gilroy-regular',
-  400,
-  normal,
-  woff2 woff eot ttf svg
-);
-
-@include font-face(
-  Gilroy,
-  '/fonts/gilroy-medium',
-  500,
-  normal,
-  woff2 woff eot ttf svg
-);
-
-@include font-face(
-  Gilroy,
-  '/fonts/gilroy-semibold',
-  600,
-  normal,
-  woff2 woff eot ttf svg
-);
-
-@include font-face(
-  Gilroy,
-  '/fonts/gilroy-bold',
-  700,
-  normal,
-  woff2 woff eot ttf svg
-);
-
 * {
   box-sizing: border-box;
 }
@@ -54,7 +22,7 @@ body {
   font-weight: 700;
   font-size: 14px;
   padding-bottom: 100px;
-  background-color: #000;
+  background-color: #fff;
 }
 
 b {
