@@ -102,6 +102,9 @@
     @media screen and (max-width: 1421px) {
       margin-right: 50px;
     }
+    @media screen and (max-width: 849px) {
+      margin-top: 10px;
+    }
   }
   .list {
     @media screen and (max-width: 1354px) {
