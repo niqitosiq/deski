@@ -21,8 +21,6 @@
 </a>
 
 <style lang="scss">
-  .contact-badge {
-  }
   .wrapper {
     display: flex;
     flex-direction: column;
