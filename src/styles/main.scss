@@ -1,12 +1,7 @@
 @import 'normalize.scss/normalize';
 @import './fonts';
 @import './animation';
-
-// Variables
-:root {
-  --accent: #de031c;
-  --container-width: 1246px;
-}
+@import './variables';
 
 * {
   box-sizing: border-box;
