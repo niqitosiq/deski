@@ -4,11 +4,23 @@
   import { DESK_CATALOG } from '@/consts/catalog'
 </script>
 
-<div id="catalog">
-  <div class="container catalog">
-    {#each DESK_CATALOG as desk}
-      <Desk {...desk} />
-    {/each}
+<div id="catalog" class="catalog">
+  <div class="container">
+    <div class="header">
+      <h2>
+        Игровые столы для геймеров,
+        <br />
+        разработанные геймерами
+      </h2>
+
+      <p>Повышенное внимание к удобству стола, дизайну и функционалу</p>
+    </div>
+
+    <div class="desks">
+      {#each DESK_CATALOG as desk}
+        <Desk {...desk} />
+      {/each}
+    </div>
   </div>
 </div>
 
@@ -17,9 +29,34 @@
     margin-top: 170px;
   }
 
-  .catalog {
+  .desks {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+  }
+
+  .header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 70px;
+    h2 {
+      font-family: Gilroy;
+      font-size: 48px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 64px;
+      letter-spacing: 0em;
+      text-align: left;
+      margin-right: 160px;
+    }
+    p {
+      font-family: Gilroy;
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 24px;
+      letter-spacing: 0em;
+      color: var(--text-transparent);
+    }
   }
 </style>

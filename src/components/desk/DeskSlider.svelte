@@ -2,21 +2,37 @@
   import Splide from '@splidejs/splide/src/js/splide'
   import { LIGHT } from '@splidejs/splide/src/js/components/index'
   import { Fade } from '@splidejs/splide/src/js/transitions/index'
-  import { onMount } from 'svelte'
+  import { onMount, tick } from 'svelte'
   import Image from '../ui/Image.svelte'
-  import { throttle } from 'lodash-es'
+  import { throttle } from 'lodash'
 
   export let images
 
   let splideWrapper
-  let splideInstance = {}
+  let splideInstance = null
   let activeIndex = 0
+  let mounted = false
 
   const slideChanged = () => {
     activeIndex = splideInstance.index || 0
   }
 
-  onMount(() => {
+  $: {
+    if (images) {
+      ;(async () => {
+        await tick()
+        initSplide()
+      })()
+    }
+  }
+
+  function initSplide() {
+    if (!mounted) return
+
+    if (splideInstance) splideInstance.destroy()
+
+    activeIndex = 0
+
     splideInstance = new Splide(splideWrapper, {
       gap: 0,
       perPage: 1,
@@ -26,6 +42,11 @@
     }).mount(LIGHT, Fade)
 
     splideInstance.on('moved', slideChanged)
+  }
+
+  onMount(() => {
+    mounted = true
+    initSplide()
   })
 
   const processPosition = throttle((event) => {

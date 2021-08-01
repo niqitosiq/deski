@@ -1,4 +1,8 @@
 <script>
+  import Button from '../ui/Button.svelte'
+
+  import DeskColors from './DeskColors.svelte'
+  import DeskDescription from './DeskDescription.svelte'
   import DeskSlider from './DeskSlider.svelte'
 
   export let name
@@ -15,6 +19,28 @@
 
 <div class="desk">
   <DeskSlider images={currentImages} />
+
+  <div class="icons" />
+
+  <div class="description">
+    <DeskDescription label="Название">
+      {name}
+    </DeskDescription>
+
+    <DeskDescription label="Цвет">
+      <DeskColors {colors} bind:value={currentColor} />
+    </DeskDescription>
+
+    <DeskDescription label="Цена">
+      {price}
+    </DeskDescription>
+
+    <div class="more">
+      <Button styling="light">
+        <span>Подробнее</span>
+      </Button>
+    </div>
+  </div>
 </div>
 
 <style lang="scss">
@@ -23,5 +49,22 @@
     background: #1c1f2a;
     border-radius: 30px;
     width: calc(100% / 3 - 10px);
+  }
+
+  .description {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 20px 0px;
+
+    :global(.desk-description:nth-child(1)) {
+      width: 50%;
+    }
+    :global(.desk-description:nth-child(2)) {
+      width: 50%;
+    }
+  }
+  .more {
+    margin-left: 40px;
   }
 </style>
