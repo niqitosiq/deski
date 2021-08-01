@@ -5,6 +5,7 @@
   import MainAdvantages from './MainAdvantages.svelte'
   import MainBuyers from './MainBuyers.svelte'
   import MainDesk from './MainDesk.svelte'
+  import MainPayment from './MainPayment.svelte'
 </script>
 
 <div class="main">
@@ -49,6 +50,8 @@
 </div>
 
 <MainAdvantages />
+
+<MainPayment />
 
 <style lang="scss">
   .container {
