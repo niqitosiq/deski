@@ -1,50 +1,59 @@
 <script>
   import Icon from '@/components/ui/Icon.svelte'
+  let advantages = [
+    {
+      icon: 'truck',
+      advantage: '14 дней',
+      description: 'От заявки до готового стола в квартире',
+    },
+    {
+      icon: 'sun',
+      advantage: 'Светомузыка в столе',
+      description: 'Подсветка и игровой дизайн',
+    },
+    {
+      icon: 'table',
+      advantage: '15 столов',
+      description: 'Большой модельный ряд',
+    },
+  ]
 </script>
 
 <div class="container advantages">
-  <div class="advantage">
-    <div class="icon">
-      <Icon name="truck" />
+  {#each advantages as advantage}
+    <div class="advantage">
+      <div class="icon">
+        <Icon name={advantage.icon} />
+      </div>
+      <div class="details">
+        <h3 class="title">
+          {advantage.advantage}
+        </h3>
+        <p class="description">
+          {advantage.description}
+        </p>
+      </div>
     </div>
-    <div class="period">
-      <h3 class="days">14 дней</h3>
-      <p class="description">От заявки до готового стола в квартире</p>
-    </div>
-  </div>
-  <div class="advantage">
-    <div class="icon">
-      <Icon name="truck" />
-    </div>
-    <div class="period">
-      <h3 class="days">14 дней</h3>
-      <p class="description">От заявки до готового стола в квартире</p>
-    </div>
-  </div>
-  <div class="advantage">
-    <div class="icon">
-      <Icon name="truck" />
-    </div>
-    <div class="period">
-      <h3 class="days">14 дней</h3>
-      <p class="description">От заявки до готового стола в квартире</p>
-    </div>
-  </div>
+  {/each}
 </div>
 
 <style lang="scss">
   .advantages {
     display: flex;
-    justify-content: space-between;
-    padding: 0px 80px;
+    justify-content: center;
+    margin-top: 160px;
   }
   .advantage {
     position: relative;
     display: flex;
     align-items: center;
-    margin-top: 98px;
-    max-width: 383px;
+    width: 100%;
+    max-width: 400px;
     padding: 9px 0px;
+    cursor: pointer;
+    &:not(:last-child) {
+      margin-right: 40px;
+    }
     :global(svg) {
       width: 45px;
       height: 45px;
@@ -54,12 +63,19 @@
       content: '';
       width: 100%;
       height: 100%;
-      background-color: #1c1f2a;
+      background-color: #1a1f31;
       top: 0;
       left: -3%;
       z-index: -2;
       transform: skew(-5deg, 0deg);
       border-radius: 10px;
+      opacity: 0.6;
+      transition: opacity ease 0.3s;
+    }
+    &:hover {
+      &::after {
+        opacity: 1;
+      }
     }
   }
   .icon {
@@ -80,10 +96,10 @@
       border-radius: 10px;
     }
   }
-  .period {
+  .details {
     margin-left: 30px;
   }
-  .days {
+  .title {
     font-family: 'Gilroy';
     font-size: 24px;
     font-style: normal;
