@@ -24,7 +24,7 @@
 
   <div class="description">
     <DeskDescription label="Название">
-      {name}
+      <h3>{name}</h3>
     </DeskDescription>
 
     <DeskDescription label="Цвет">
@@ -32,7 +32,7 @@
     </DeskDescription>
 
     <DeskDescription label="Цена">
-      {price}
+      <span>{price}</span>
     </DeskDescription>
 
     <div class="more">
@@ -71,6 +71,16 @@
       width: 50%;
     }
   }
+
+  h3 {
+    font-family: Gilroy;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 24px;
+    letter-spacing: 0em;
+  }
+
   .more {
     margin-left: 40px;
   }
