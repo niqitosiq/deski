@@ -30,6 +30,9 @@
     @media screen and (max-width: 1500px) {
       margin-top: 80px;
     }
+    @media screen and (max-width: 1380px) {
+      margin-top: 50px;
+    }
     @media screen and (max-width: 520px) {
       margin-top: 20px;
     }

@@ -53,7 +53,7 @@
     @media screen and (max-width: 1200px) {
       width: calc(50% - 10px);
     }
-    @media screen and (max-width: 820px) {
+    @media screen and (max-width: 728px) {
       width: 100%;
     }
   }

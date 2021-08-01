@@ -140,6 +140,7 @@
   .lead {
     display: flex;
     align-items: center;
+    margin-bottom: 70px;
     @media screen and (max-width: 1400px) {
       flex-direction: column;
       align-items: flex-start;
@@ -150,7 +151,7 @@
     margin-left: 60px;
     @media screen and (max-width: 1400px) {
       margin-left: 0;
-      margin-top: 30px;
+      margin-top: 90px;
     }
     @media screen and (max-width: 420px) {
       display: none;
@@ -210,7 +211,6 @@
   .button {
     min-width: 270px;
     position: relative;
-    margin-bottom: 70px;
     font-size: 13px;
     :global(button) {
       @media screen and (max-width: 420px) {

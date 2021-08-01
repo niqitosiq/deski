@@ -44,6 +44,7 @@
     margin-top: 160px;
     @media screen and (max-width: 1380px) {
       flex-wrap: wrap;
+      margin-top: 100px;
     }
     @media screen and (max-width: 920px) {
       margin-top: 20px;
