@@ -46,9 +46,16 @@
 <style lang="scss">
   .desk {
     padding: 25px;
+    margin-bottom: 20px;
     background: #1c1f2a;
     border-radius: 30px;
     width: calc(100% / 3 - 10px);
+    @media screen and (max-width: 1200px) {
+      width: calc(50% - 10px);
+    }
+    @media screen and (max-width: 820px) {
+      width: 100%;
+    }
   }
 
   .description {

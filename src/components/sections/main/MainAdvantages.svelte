@@ -42,6 +42,17 @@
     display: flex;
     justify-content: center;
     margin-top: 160px;
+    @media screen and (max-width: 1380px) {
+      flex-wrap: wrap;
+    }
+    @media screen and (max-width: 920px) {
+      margin-top: 20px;
+    }
+    @media screen and (max-width: 420px) {
+      margin-top: -20px;
+      z-index: 20;
+      position: relative;
+    }
   }
   .advantage {
     position: relative;
@@ -51,8 +62,27 @@
     max-width: 400px;
     padding: 9px 0px;
     cursor: pointer;
+    padding-right: 20px;
+    @media screen and (max-width: 1380px) {
+      margin-bottom: 20px;
+    }
+    @media screen and (max-width: 990px) {
+      max-width: 450px;
+    }
     &:not(:last-child) {
       margin-right: 40px;
+      @media screen and (max-width: 1200px) {
+        margin-right: 0;
+      }
+    }
+
+    &:first-child {
+      @media screen and (max-width: 1200px) {
+        margin-right: 40px;
+      }
+      @media screen and (max-width: 990px) {
+        margin-right: 0;
+      }
     }
     :global(svg) {
       width: 45px;
@@ -65,7 +95,7 @@
       height: 100%;
       background-color: #1a1f31;
       top: 0;
-      left: -3%;
+      left: -5px;
       z-index: -2;
       transform: skew(-5deg, 0deg);
       border-radius: 10px;
@@ -85,6 +115,7 @@
     height: 89px;
     align-items: center;
     justify-content: center;
+    flex-shrink: 0;
     &::before {
       position: absolute;
       content: '';
@@ -98,6 +129,12 @@
   }
   .details {
     margin-left: 30px;
+    @media screen and (max-width: 550px) {
+      margin-left: 15px;
+    }
+    @media screen and (max-width: 340px) {
+      margin-left: 10px;
+    }
   }
   .title {
     font-family: 'Gilroy';
@@ -106,6 +143,12 @@
     font-weight: 700;
     text-align: left;
     margin-bottom: 10px;
+    @media screen and (max-width: 1200px) {
+      font-size: 20px;
+    }
+    @media screen and (max-width: 550px) {
+      font-size: 18px;
+    }
   }
   .description {
     font-family: Gilroy;
@@ -117,5 +160,8 @@
     color: var(--text-transparent);
     padding-right: 40px;
     max-width: 230px;
+    @media screen and (max-width: 550px) {
+      padding-right: 10px;
+    }
   }
 </style>

@@ -38,7 +38,7 @@
       perPage: 1,
       type: 'fade',
       arrows: false,
-      fixedHeight: '336px',
+      heightRatio: 0.632,
     }).mount(LIGHT, Fade)
 
     splideInstance.on('moved', slideChanged)
@@ -76,9 +76,11 @@
 
 <style lang="scss">
   .desk-slider {
-    width: 500px;
     padding: 50px;
     background: #262832;
     border-radius: 30px;
+    @media screen and (max-width: 1500px) {
+      padding: 20px;
+    }
   }
 </style>
