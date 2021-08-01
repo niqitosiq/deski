@@ -9,6 +9,8 @@
     "start": "node __sapper__/build"
   },
   "dependencies": {
+    "@splidejs/splide": "^2.4.21",
+    "lodash-es": "^4.17.21",
     "normalize.scss": "^0.1.0"
   },
   "devDependencies": {
