@@ -1,8 +1,8 @@
 <script>
   import Icon from '@ui/Icon.svelte'
 
+  export let label
   export let icon = ''
-  export let label = ''
   export let link = ''
 </script>
 
@@ -10,9 +10,11 @@
   <Icon name={icon} />
 
   <div class="wrapper">
-    <span class="label">
-      {label}
-    </span>
+    {#if label}
+      <span class="label">
+        {label}
+      </span>
+    {/if}
 
     <span>
       <slot />
@@ -24,5 +26,19 @@
   .wrapper {
     display: flex;
     flex-direction: column;
+    font-family: 'Gilroy';
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    text-align: left;
+    @media screen and (max-width: 370px) {
+      font-size: 14px;
+    }
+  }
+  .contact-badge {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
   }
 </style>

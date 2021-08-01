@@ -7,71 +7,71 @@
   import MainDesk from './MainDesk.svelte'
 </script>
 
-<div class="main container">
+<div class="main">
   <div class="background">
     <Image src="/img/decor/glow.png" />
   </div>
+  <div class="container">
+    <div class="info">
+      <h1 class="title">
+        Игровые компьютерные столы
+        <br />
+        Deski от производителя
+        <br />
+        с гарантией до 3 лет
+        <br />
+        <span class="accent"> от 4 990 руб </span>
+      </h1>
 
-  <div class="info">
-    <h1 class="title">
-      Игровые компьютерные столы
-      <br />
-      Deski от производителя
-      <br />
-      с гарантией до 3 лет
-      <br />
-      <span class="accent"> от 4 990 руб </span>
-    </h1>
+      <p class="description">и доставкой по РФ до 3 дней</p>
 
-    <p class="description">и доставкой по РФ до 3 дней</p>
+      <div class="lead">
+        <div class="button">
+          <Button>
+            <span>Получите бесплатную консультацию </span>
+          </Button>
+          <div class="discount">
+            <Icon name="pointer" />
+            <p>
+              и скидку <span>1 390 руб.</span> на первый заказ
+            </p>
+          </div>
+        </div>
 
-    <div class="lead">
-      <div class="button">
-        <Button>
-          <span>Получите бесплатную консультацию </span>
-        </Button>
-        <div class="discount">
-          <Icon name="pointer" />
-          <p>
-            и скидку <span>1 390 руб.</span> на первый заказ
-          </p>
+        <div class="buyers">
+          <MainBuyers />
         </div>
       </div>
-
-      <div class="buyers">
-        <MainBuyers />
-      </div>
     </div>
-  </div>
 
-  <MainDesk />
+    <MainDesk />
+  </div>
 </div>
 
 <MainAdvantages />
 
 <style lang="scss">
-  .main {
-    padding-top: 230px;
+  .container {
     display: flex;
     position: relative;
     justify-content: space-between;
-    @media screen and (max-width: 1240px) {
-      padding-bottom: 180px;
-      padding-top: 180px;
-    }
-    @media screen and (max-width: 1040px) {
-      padding-bottom: 100px;
-      padding-top: 100px;
-    }
-    @media screen and (max-width: 980px) {
-      padding-bottom: 40px;
-      padding-top: 150px;
-    }
+    margin-top: -160px;
     @media screen and (max-width: 920px) {
       flex-direction: column;
     }
+    padding-top: 230px;
+    @media screen and (max-width: 1240px) {
+      padding-bottom: 180px;
+    }
+    @media screen and (max-width: 1040px) {
+      padding-bottom: 100px;
+    }
+    @media screen and (max-width: 980px) {
+      padding-bottom: 40px;
+    }
     @media screen and (max-width: 420px) {
-      padding-top: 30px;
+      padding-top: 60px;
+      margin-top: 0;
     }
   }
 
@@ -202,8 +202,8 @@
     position: absolute;
     top: 0;
     bottom: 0;
-    left: -40px;
-    right: -40px;
+    left: -0px;
+    right: -0px;
     z-index: -1;
   }
 
