@@ -64,6 +64,7 @@
     padding: 9px 0px;
     cursor: pointer;
     padding-right: 20px;
+    padding-left: 7px;
     @media screen and (max-width: 1380px) {
       margin-bottom: 20px;
     }
