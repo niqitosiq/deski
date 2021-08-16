@@ -7,7 +7,7 @@
   import MainDesk from './MainDesk.svelte'
 </script>
 
-<div class="main" id="main">
+<section class="main" id="main">
   <div class="background">
     <Image src="/img/decor/glow.png" />
   </div>
@@ -46,7 +46,7 @@
 
     <MainDesk />
   </div>
-</div>
+</section>
 
 <MainAdvantages />
 

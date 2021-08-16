@@ -4,7 +4,7 @@
   import { DESK_CATALOG } from '@/consts/catalog'
 </script>
 
-<div id="catalog" class="catalog">
+<section id="catalog" class="catalog">
   <div class="container">
     <div class="header">
       <h2>
@@ -22,7 +22,7 @@
       {/each}
     </div>
   </div>
-</div>
+</section>
 
 <style lang="scss">
   #catalog {

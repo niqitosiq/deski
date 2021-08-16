@@ -27,7 +27,7 @@
   ]
 </script>
 
-<div class="advantages" id="advantages">
+<section class="advantages" id="advantages">
   <div class="container">
     <h2>Почему тебе необходим именно стол Deski?</h2>
 
@@ -41,7 +41,7 @@
       <Image src="/img/advantages/hero.png" />
     </div>
   </div>
-</div>
+</section>
 
 <style lang="scss">
   .advantages {
@@ -53,6 +53,9 @@
     }
     @media screen and (max-width: 520px) {
       padding-top: 30px;
+    }
+    .container {
+      position: relative;
     }
   }
   .items {
@@ -100,7 +103,7 @@
   .hero {
     position: absolute;
     z-index: -1;
-    right: 0;
+    right: -6%;
     top: 0;
     @media screen and (max-width: 990px) {
       right: -20%;

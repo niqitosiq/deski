@@ -2,7 +2,7 @@
   import Image from '@/components/ui/Image.svelte'
 </script>
 
-<div class="container payment-delivery">
+<section class="container payment-delivery">
   <div class="wrapper">
     <h2 class="title">Оплата</h2>
     <p class="subtitle">Виды оплаты:</p>
@@ -51,7 +51,7 @@
   <div class="dota">
     <Image src="/img/payment/dota.png" alt="персонаж Доты" />
   </div>
-</div>
+</section>
 
 <style lang="scss">
   .payment-delivery {

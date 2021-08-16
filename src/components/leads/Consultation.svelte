@@ -3,7 +3,7 @@
   import Image from '../ui/Image.svelte'
 </script>
 
-<div class="consultation container">
+<section class="consultation container">
   <div class="background">
     <Image src="/img/lead/lead-background-1.png" alt="Фон блока" />
   </div>
@@ -23,7 +23,7 @@
       alt="Картинка привлекающая внимание"
     />
   </div>
-</div>
+</section>
 
 <style lang="scss">
   .consultation {
