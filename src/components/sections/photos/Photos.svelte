@@ -74,6 +74,9 @@
   }
   .photos {
     margin-top: 140px;
+    @media screen and (max-width: 520px) {
+      margin-top: 30px;
+    }
   }
   .images {
     display: flex;

@@ -172,6 +172,7 @@
       @media screen and (max-width: 520px) {
         margin-right: 0;
         margin-top: 0;
+        margin-bottom: 30px;
       }
     }
   }

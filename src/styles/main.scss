@@ -67,3 +67,9 @@ p,
 span {
   margin: 0;
 }
+
+.window-wrap {
+  @media screen and (max-width: 520px) {
+    margin: 0 !important;
+  }
+}
