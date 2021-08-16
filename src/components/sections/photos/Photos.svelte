@@ -1,7 +1,10 @@
 <script>
+  import Gallery from '@/components/gallery/Gallery.svelte'
+
   import Image from '@/components/ui/Image.svelte'
 
   import { PHOTOS } from '@/consts/photos'
+  import { getContext } from 'svelte'
 
   let photoFormatted = []
   let mainImage = {}
@@ -16,18 +19,39 @@
       photoFormatted.push(photo)
     })
   }
+  const { open } = getContext('simple-modal')
+
+  const showGallery = (active) => {
+    open(
+      Gallery,
+      {
+        images: PHOTOS,
+        active,
+      },
+      {
+        styleBg: {
+          background: 'rgba(0, 0, 0, 0.66)',
+        },
+        styleWindow: {
+          background: 'rgba(0,0,0,0)',
+          width: 'var(--modalWindowWidth)',
+          maxWidth: '1600px',
+        },
+      }
+    )
+  }
 </script>
 
 <section class="photos container">
   <h2>Фото наших столов</h2>
 
   <div class="images">
-    <div class="main">
+    <div class="main" on:click={() => showGallery(0)}>
       <Image src={mainImage.img} alt="Лучший стол" />
     </div>
     <div class="secondary">
-      {#each photoFormatted as photo}
-        <div class="photo">
+      {#each photoFormatted as photo, index}
+        <div class="photo" on:click={() => showGallery(index + 1)}>
           <Image src={photo.img} alt="image" />
         </div>
       {/each}
@@ -36,6 +60,18 @@
 </section>
 
 <style lang="scss">
+  :root {
+    --modalWindowWidth: 70%;
+    @media screen and (max-width: 1000px) {
+      --modalWindowWidth: 80%;
+    }
+    @media screen and (max-width: 700px) {
+      --modalWindowWidth: 95%;
+    }
+    @media screen and (max-width: 480px) {
+      --modalWindowWidth: 100%;
+    }
+  }
   .photos {
     margin-top: 140px;
   }
@@ -43,11 +79,19 @@
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
+    @media screen and (max-width: 680px) {
+      flex-direction: column;
+    }
   }
   .main {
     width: calc(50% - 10px);
     margin-right: 20px;
     flex-shrink: 0;
+    cursor: pointer;
+    @media screen and (max-width: 680px) {
+      width: 100%;
+      margin-bottom: 20px;
+    }
   }
   .secondary {
     width: calc(50% - 10px);
@@ -55,6 +99,9 @@
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
+    @media screen and (max-width: 680px) {
+      width: 100%;
+    }
   }
   .photo {
     width: calc(50% - 10px);
@@ -70,5 +117,21 @@
     letter-spacing: 0em;
     text-align: center;
     margin-bottom: 40px;
+    @media screen and (max-width: 1500px) {
+      font-size: 38px;
+      line-height: 42px;
+    }
+    @media screen and (max-width: 1320px) {
+      font-size: 32px;
+      line-height: 38px;
+      flex-shrink: 0;
+    }
+    @media screen and (max-width: 960px) {
+      margin-bottom: 20px;
+    }
+    @media screen and (max-width: 520px) {
+      font-size: 28px;
+      line-height: 34px;
+    }
   }
 </style>

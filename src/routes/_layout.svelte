@@ -1,10 +1,13 @@
 <script>
   import Header from '@/components/basic/Header/Header.svelte'
+  import Modal from 'svelte-simple-modal'
 </script>
 
 <main>
   <Header />
-  <slot />
+  <Modal>
+    <slot />
+  </Modal>
 </main>
 
 <style lang="scss" global>

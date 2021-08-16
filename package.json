@@ -56,6 +56,7 @@
     "svelte": "^3.17.3",
     "svelte-image": "^0.2.9",
     "svelte-preprocess": "^4.6.1",
-    "svelte-sequential-preprocessor": "^0.0.4"
+    "svelte-sequential-preprocessor": "^0.0.4",
+    "svelte-simple-modal": "^1.0.0"
   }
 }
