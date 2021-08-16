@@ -67,7 +67,10 @@
       padding-top: 50px;
     }
     @media screen and (max-width: 1140px) {
-      margin-top: 0;
+      margin-top: 30px;
+    }
+    @media screen and (max-width: 990px) {
+      padding-top: 0;
     }
   }
   .background {
@@ -168,6 +171,7 @@
       }
       @media screen and (max-width: 520px) {
         margin-right: 0;
+        margin-top: 0;
       }
     }
   }
@@ -178,6 +182,24 @@
     font-weight: 700;
     text-align: left;
     margin-bottom: 12px;
+    @media screen and (max-width: 1500px) {
+      font-size: 38px;
+      line-height: 42px;
+      margin-right: 80px;
+    }
+    @media screen and (max-width: 1320px) {
+      font-size: 32px;
+      line-height: 38px;
+      margin-right: 40px;
+      flex-shrink: 0;
+    }
+    @media screen and (max-width: 960px) {
+      margin-bottom: 20px;
+    }
+    @media screen and (max-width: 520px) {
+      font-size: 28px;
+      line-height: 34px;
+    }
   }
   .subtitle {
     font-family: Gilroy;
@@ -187,6 +209,9 @@
     text-align: left;
     color: var(--text-transparent);
     margin-bottom: 32px;
+    @media screen and (max-width: 520px) {
+      font-size: 16px;
+    }
   }
   .cloud {
     position: relative;

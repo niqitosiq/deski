@@ -48,6 +48,9 @@
     padding-top: 104px;
     padding-bottom: 170px;
     position: relative;
+    @media screen and (max-width: 1180px) {
+      padding-bottom: 30px;
+    }
     @media screen and (max-width: 520px) {
       padding-top: 30px;
     }

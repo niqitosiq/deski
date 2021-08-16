@@ -114,7 +114,7 @@
   .connection {
     display: flex;
     width: 100%;
-    max-width: 591px;
+    max-width: 613px;
     @media screen and (max-width: 1647px) {
       justify-content: flex-end;
     }
@@ -141,10 +141,10 @@
     display: flex;
     align-items: center;
     width: 100%;
-    max-width: 120px;
+    max-width: 140px;
     flex-shrink: 0;
     @media screen and (max-width: 425px) {
-      max-width: 90px;
+      max-width: 110px;
     }
   }
   .contact {
