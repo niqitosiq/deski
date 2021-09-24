@@ -5,6 +5,7 @@
   import Payment from '@/components/sections/payment/Payment.svelte'
   import Consultation from '@/components/leads/Consultation.svelte'
   import Photos from '@/components/sections/photos/Photos.svelte'
+  import Reviews from '@/components/sections/reviews/Reviews.svelte'
 </script>
 
 <div class="index">
@@ -14,6 +15,7 @@
   <Consultation />
   <Payment />
   <Photos />
+  <Reviews />
 </div>
 
 <style lang="scss">
