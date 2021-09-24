@@ -8,6 +8,10 @@
   import Reviews from '@/components/sections/reviews/Reviews.svelte'
 </script>
 
+<svelte:head>
+  <title>Deski | Главная</title>
+</svelte:head>
+
 <div class="index">
   <Main />
   <Catalog />

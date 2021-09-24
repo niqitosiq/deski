@@ -51,7 +51,7 @@
       <ul class="splide__list">
         {#each images as image}
           <li class="splide__slide">
-            <Image src={image.img} alt="" />
+            <Image src={image.img || image.src || image.preview} alt="" />
           </li>
         {/each}
       </ul>
@@ -63,7 +63,7 @@
       <ul class="splide__list">
         {#each images as image}
           <li class="splide__slide">
-            <Image src={image.preview} alt="" />
+            <Image src={image.preview || image.src || image.img} alt="" />
           </li>
         {/each}
       </ul>

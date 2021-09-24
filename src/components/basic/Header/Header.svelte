@@ -144,6 +144,9 @@
     max-width: 140px;
     flex-shrink: 0;
     @media screen and (max-width: 425px) {
+      max-width: 130px;
+    }
+    @media screen and (max-width: 340px) {
       max-width: 110px;
     }
   }
