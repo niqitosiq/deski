@@ -71,9 +71,6 @@
     @media screen and (max-width: 1240px) {
       width: 100%;
       min-width: 0px;
-      br {
-        display: none;
-      }
     }
     @media screen and (max-width: 560px) {
       font-size: 30px;

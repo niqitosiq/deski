@@ -7,7 +7,6 @@
   export let align
   export let name
   export let avatar
-  export let type
   export let text
   export let attachments = []
 

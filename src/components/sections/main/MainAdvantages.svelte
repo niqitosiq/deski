@@ -19,7 +19,7 @@
   ]
 </script>
 
-<div class="container advantages">
+<section id="main-advantages" class="container advantages">
   {#each advantages as advantage}
     <div class="advantage">
       <div class="icon">
@@ -35,7 +35,7 @@
       </div>
     </div>
   {/each}
-</div>
+</section>
 
 <style lang="scss">
   .advantages {

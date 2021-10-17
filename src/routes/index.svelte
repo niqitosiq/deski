@@ -6,6 +6,7 @@
   import Consultation from '@/components/leads/Consultation.svelte'
   import Photos from '@/components/sections/photos/Photos.svelte'
   import Reviews from '@/components/sections/reviews/Reviews.svelte'
+  import Contacts from '@/components/sections/contacts/Contacts.svelte'
 </script>
 
 <svelte:head>
@@ -20,6 +21,7 @@
   <Payment />
   <Photos />
   <Reviews />
+  <Contacts />
 </div>
 
 <style lang="scss">
