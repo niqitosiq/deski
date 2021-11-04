@@ -91,6 +91,7 @@
     letter-spacing: 0em;
     text-align: left;
     margin-bottom: 10px;
+    padding-right: 20px;
     @media screen and (max-width: 520px) {
       padding-right: 30px;
     }

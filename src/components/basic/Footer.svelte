@@ -1,18 +1,18 @@
 <script>
-  import BaseMenu from '../BaseMenu.svelte'
+  import BaseMenu from './BaseMenu.svelte'
 </script>
 
-<header class="header container">
+<footer class="footer container">
   <BaseMenu />
-</header>
+</footer>
 
 <style lang="scss">
-  .header {
+  .footer {
     z-index: 20;
     position: relative;
     display: flex;
     justify-content: space-between;
-    padding-top: 36px;
+    padding-top: 72px;
     @media screen and (max-width: 848px) {
       flex-direction: column;
     }

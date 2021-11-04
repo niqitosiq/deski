@@ -1,4 +1,5 @@
 <script>
+  import Footer from '@/components/basic/Footer.svelte'
   import Header from '@/components/basic/Header/Header.svelte'
   import Modal from 'svelte-simple-modal'
 </script>
@@ -30,13 +31,13 @@
   />
 </svelte:head>
 
+<Header />
 <main>
-  <Header />
-
   <Modal>
     <slot />
   </Modal>
 </main>
+<Footer />
 
 <style lang="scss" global>
   @import '../styles/main';

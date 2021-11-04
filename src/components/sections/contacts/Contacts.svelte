@@ -63,6 +63,16 @@
 </section>
 
 <style lang="scss">
+  #contacts {
+    margin-top: 100px;
+    @media screen and (max-width: 1240px) {
+      margin-top: 200px;
+    }
+    @media screen and (max-width: 720px) {
+      margin-top: 80px;
+    }
+  }
+
   h2 {
     font-family: Gilroy;
     font-size: 48px;
@@ -98,8 +108,7 @@
   .socials,
   .public,
   .left,
-  .right,
-  .badges {
+  .right {
     display: flex;
     align-items: center;
   }
