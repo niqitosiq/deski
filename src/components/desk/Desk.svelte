@@ -13,6 +13,8 @@
   export let colors
   export let price
   export let images
+  export let article
+  export let slug
 
   let currentColor = colors[0]
   let currentImages
@@ -33,16 +35,23 @@
           name,
           colors,
           price,
+          article,
+          slug,
         },
       },
       {
         styleBg: {
           background: 'rgba(0, 0, 0, 0.66)',
+          overflow: 'auto',
         },
         styleWindow: {
           background: 'rgba(0,0,0,0)',
           width: 'var(--modalWindowWidth)',
           maxWidth: '1600px',
+          overflow: 'visible',
+        },
+        styleContent: {
+          overflow: 'visible',
         },
       }
     )
@@ -70,11 +79,17 @@
       <span class="price">{price}</span>
     </DeskDescription>
 
-    <div class="more">
+    <a
+      class="more"
+      href={`/desks/${slug}`}
+      on:click={(e) => {
+        e.preventDefault()
+      }}
+    >
       <Button styling="light" on:click={() => showDeskInfo(0)}>
         <span>Подробнее</span>
       </Button>
-    </div>
+    </a>
   </div>
 </div>
 

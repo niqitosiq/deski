@@ -1,6 +1,9 @@
+import zero from './articles/zero.html';
+
 export const DESK_CATALOG = [
   {
-    name: 'Deski FRAG XXL',
+    slug: 'deski0',
+    name: 'Deski FRAG XXL1',
     colors: [
       { color: '#fff', name: 'Белый' },
       { color: '#000', name: 'Черный' },
@@ -25,9 +28,13 @@ export const DESK_CATALOG = [
         '/img/desks/1/2.png',
       ],
     },
+
+    article: zero,
   },
   {
+    slug: 'deski1',
     name: 'Deski FRAG XXL',
+    article: zero,
     colors: [
       { color: '#fff', name: 'Белый' },
       { color: '#000', name: 'Черный' },
@@ -39,7 +46,9 @@ export const DESK_CATALOG = [
     },
   },
   {
+    slug: 'deski2',
     name: 'Deski FRAG XXL',
+    article: zero,
     colors: [
       { color: '#fff', name: 'Белый' },
       { color: '#000', name: 'Черный' },
@@ -56,7 +65,9 @@ export const DESK_CATALOG = [
     },
   },
   {
+    slug: 'deski3',
     name: 'Deski FRAG XXL',
+    article: zero,
     colors: [
       { color: '#fff', name: 'Белый' },
       { color: '#000', name: 'Черный' },
@@ -68,7 +79,9 @@ export const DESK_CATALOG = [
     },
   },
   {
+    slug: 'deski4',
     name: 'Deski FRAG XXL',
+    article: zero,
     colors: [
       { color: '#fff', name: 'Белый' },
       { color: '#000', name: 'Черный' },
@@ -80,7 +93,9 @@ export const DESK_CATALOG = [
     },
   },
   {
+    slug: 'deski5',
     name: 'Deski FRAG XXL',
+    article: zero,
     colors: [
       { color: '#fff', name: 'Белый' },
       { color: '#000', name: 'Черный' },

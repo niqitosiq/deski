@@ -14,9 +14,10 @@
 </script>
 
 <div class="about">
-  <div class="logo">
+  <a class="logo" href="/">
     <Icon name="logo" />
-  </div>
+  </a>
+
   <ul class="list">
     {#each links as link}
       <li class="item">
