@@ -20,10 +20,7 @@ const observers = {
 function ensureIntersectionObserver(name, config) {
   if (intersectionObservers[name]) return;
 
-  intersectionObservers[name] = new IntersectionObserver(
-    observers[name],
-    config,
-  );
+  intersectionObservers[name] = new IntersectionObserver(observers[name], config);
 }
 
 function viewport(element, name = 'default', config = {}) {

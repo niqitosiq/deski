@@ -2,12 +2,13 @@
   import Button from '@/components/ui/Button.svelte'
   import Icon from '@/components/ui/Icon.svelte'
   import Image from '@/components/ui/Image.svelte'
+  import { viewClass } from '@/directives/inViewport'
   import MainAdvantages from './MainAdvantages.svelte'
   import MainBuyers from './MainBuyers.svelte'
   import MainDesk from './MainDesk.svelte'
 </script>
 
-<section class="main" id="main">
+<section class="main" id="main" use:viewClass>
   <div class="background">
     <Image src="/img/decor/glow.png" />
   </div>

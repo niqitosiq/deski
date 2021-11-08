@@ -7,13 +7,14 @@
   import Photos from '@/components/sections/photos/Photos.svelte'
   import Reviews from '@/components/sections/reviews/Reviews.svelte'
   import Contacts from '@/components/sections/contacts/Contacts.svelte'
+  import { fadeIn, fadeOut } from '@/utils/pageFade'
 </script>
 
 <svelte:head>
   <title>Deski | Главная</title>
 </svelte:head>
 
-<div class="index">
+<div class="index" in:fadeIn out:fadeOut>
   <Main />
   <Catalog />
   <Advantages />

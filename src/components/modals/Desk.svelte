@@ -16,7 +16,7 @@
     :global(.head) {
       padding: 30px;
     }
-    :global(.info) {
+    :global(.article-info) {
       padding: 0 30px;
     }
   }

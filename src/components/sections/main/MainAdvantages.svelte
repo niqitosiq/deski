@@ -1,4 +1,5 @@
 <script>
+  import { viewClass } from '@/directives/inViewport'
   import Icon from '@/components/ui/Icon.svelte'
   let advantages = [
     {
@@ -19,7 +20,7 @@
   ]
 </script>
 
-<section id="main-advantages" class="container advantages">
+<section id="main-advantages" class="container advantages" use:viewClass>
   {#each advantages as advantage}
     <div class="advantage">
       <div class="icon">

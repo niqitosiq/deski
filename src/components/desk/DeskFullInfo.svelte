@@ -57,7 +57,7 @@
   </div>
 </div>
 
-<div class="info">
+<div class="article-info">
   <Article article={desk.article} {isShort} on:click={readFullArticle} />
 </div>
 
@@ -79,7 +79,7 @@
     flex-direction: column;
   }
 
-  .info {
+  .article-info {
     color: #fff;
     position: relative;
   }

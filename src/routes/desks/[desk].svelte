@@ -14,15 +14,22 @@
   import DeskFullInfo from '@/components/desk/DeskFullInfo.svelte'
   import Consultation from '@/components/leads/Consultation.svelte'
   import Catalog from '@/components/sections/catalog/Catalog.svelte'
+  import { fadeIn, fadeOut } from '@/utils/pageFade'
 
   export let fetchedDesk = {}
 </script>
 
-<div class="desk-page container">
-  <DeskFullInfo desk={fetchedDesk} isShort={false} />
+<svelte:head>
+  <title>Deski | {fetchedDesk.name}</title>
+</svelte:head>
+
+<div class="desk-page" in:fadeIn out:fadeOut>
+  <div class="container">
+    <DeskFullInfo desk={fetchedDesk} isShort={false} />
+  </div>
+  <Consultation />
+  <Catalog />
 </div>
-<Consultation />
-<Catalog />
 
 <style lang="scss">
   .desk-page {

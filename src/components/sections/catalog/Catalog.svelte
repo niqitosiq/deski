@@ -1,10 +1,11 @@
 <script>
   import Desk from '@/components/desk/Desk.svelte'
+  import { viewClass } from '@/directives/inViewport'
 
   import { DESK_CATALOG } from '@/consts/catalog'
 </script>
 
-<section id="catalog" class="catalog">
+<section id="catalog" class="catalog" use:viewClass>
   <div class="container">
     <div class="header">
       <h2>

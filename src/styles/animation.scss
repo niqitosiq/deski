@@ -1,1 +1,151 @@
 /* Animations */
+.main {
+  .title {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity ease 0.6s 0s, transform ease 0.6s 0s;
+  }
+
+  .description {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity ease 0.6s 0.1s, transform ease 0.6s 0.1s;
+  }
+
+  .lead {
+    .button {
+      opacity: 0;
+      transform: translateX(20px);
+      transition: opacity ease 0.6s 0.2s, transform ease 1s 0.2s;
+    }
+    .buyers {
+      opacity: 0;
+      transform: translateX(20px);
+      transition: opacity ease 0.6s 0.3s, transform ease 1s 0.3s;
+    }
+  }
+
+  .main-desk {
+    .glow {
+      opacity: 0;
+      transform: translate(-50%, -50%) scale(1.2);
+      transition: opacity ease 0.6s 0.4s, transform ease 1s 0.4s;
+    }
+
+    > .wrapper {
+      opacity: 0;
+      transform: scale(1.2);
+      transition: opacity ease 0.6s 0.45s, transform ease 1s 0.45s;
+    }
+
+    .play {
+      opacity: 0;
+      transform: translateX(30px);
+      transition: opacity ease 1s 0.8s, transform ease 1s 0.75s;
+    }
+  }
+
+  &.visible {
+    .title {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .description {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .lead {
+      .button {
+        opacity: 1;
+        transform: translateX(0);
+      }
+      .buyers {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    .main-desk {
+      .glow {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+      }
+
+      > .wrapper {
+        opacity: 1;
+        transform: scale(1);
+      }
+
+      .play {
+        opacity: 1;
+        transform: translateX(0px);
+      }
+    }
+  }
+}
+
+#main-advantages {
+  .advantage {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: transform ease 1.4s 0s, opacity ease 1.4s 0s;
+    @for $i from 1 through 3 {
+      &:nth-child(#{$i}) {
+        transition-delay: #{50 + 100 * $i} + 'ms';
+      }
+    }
+  }
+
+  &.visible {
+    .advantage {
+      opacity: 1;
+      transform: translateY(0px);
+    }
+  }
+}
+
+.catalog {
+  .header {
+    h2 {
+      opacity: 0;
+      transition: opacity ease 0.6s 0.1s;
+    }
+
+    p {
+      opacity: 0;
+      transform: translateX(50px);
+      transition: opacity ease 0.6s 0.3s, transform ease 1s 0.3s;
+    }
+  }
+
+  .desk {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: transform ease 1.4s 0s, opacity ease 1.4s 0s;
+    @for $i from 1 through 6 {
+      &:nth-child(#{$i}) {
+        transition-delay: #{400 + 250 * $i} + 'ms';
+      }
+    }
+  }
+
+  &.visible {
+    .header {
+      h2 {
+        opacity: 1;
+      }
+
+      p {
+        opacity: 1;
+        transform: translateX(0px);
+      }
+    }
+
+    .desk {
+      opacity: 1;
+      transform: translateY(0px);
+    }
+  }
+}
