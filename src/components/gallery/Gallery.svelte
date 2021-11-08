@@ -1,12 +1,16 @@
 <script>
-  import { onMount } from 'svelte'
+  import { onMount, tick } from 'svelte'
   import Splide from '@splidejs/splide/src/js/splide'
   import { Fade, Slide } from '@splidejs/splide/src/js/transitions/index'
   import { SPLIDE_GALLERY } from '@/consts/splideGallery'
   import Image from '../ui/Image.svelte'
 
+  import { createEventDispatcher } from 'svelte'
+
+  const dispatch = createEventDispatcher()
+
   export let images = []
-  export let active
+  export let active = 0
 
   let secondarySlider
   let splideSecondaryInstance
@@ -14,7 +18,23 @@
   let primarySlider
   let splidePrimaryInstance
 
-  onMount(async () => {
+  let mounted = false
+
+  $: {
+    if (images) {
+      ;(async () => {
+        await tick()
+        initGallery()
+      })()
+    }
+  }
+
+  const initGallery = async () => {
+    if (!mounted) return
+
+    if (splideSecondaryInstance) splideSecondaryInstance.destroy()
+    if (splidePrimaryInstance) splidePrimaryInstance.destroy()
+
     splideSecondaryInstance = new Splide(secondarySlider, {
       fixedWidth: 100,
       gap: 10,
@@ -42,16 +62,30 @@
       .mount(SPLIDE_GALLERY, Fade)
 
     setTimeout(() => splidePrimaryInstance.go(active), 300)
+  }
+
+  onMount(() => {
+    mounted = true
+    initGallery()
   })
+
+  function imageClick(activeImage) {
+    dispatch('imageClick', {
+      activeImage,
+    })
+  }
 </script>
 
 <div class="gallery">
   <div bind:this={primarySlider} class="splide image">
     <div class="splide__track">
       <ul class="splide__list">
-        {#each images as image}
-          <li class="splide__slide">
-            <Image src={image.img || image.src || image.preview} alt="" />
+        {#each images as image, index}
+          <li class="splide__slide" on:click={() => imageClick(index)}>
+            <Image
+              src={image.img || image.src || image.preview || image}
+              alt=""
+            />
           </li>
         {/each}
       </ul>
@@ -63,7 +97,10 @@
       <ul class="splide__list">
         {#each images as image}
           <li class="splide__slide">
-            <Image src={image.preview || image.src || image.img} alt="" />
+            <Image
+              src={image.preview || image.src || image.img || image}
+              alt=""
+            />
           </li>
         {/each}
       </ul>
@@ -96,5 +133,9 @@
     background-color: #0e101c;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
+
+    .splide__slide {
+      cursor: pointer;
+    }
   }
 </style>

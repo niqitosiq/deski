@@ -7,8 +7,23 @@ export const DESK_CATALOG = [
     ],
     price: '5 990р',
     images: {
-      Белый: ['/1/1.png', '/1/2.png', '/1/1.png', '/1/2.png'],
-      Черный: ['/1/1.png'],
+      Белый: [
+        '/img/desks/1/1.png',
+        '/img/desks/1/2.png',
+        '/img/desks/1/1.png',
+        '/img/desks/1/2.png',
+      ],
+      Черный: [
+        '/img/desks/1/1.png',
+        '/img/desks/1/1.png',
+        '/img/desks/1/2.png',
+        '/img/desks/1/1.png',
+        '/img/desks/1/2.png',
+        '/img/desks/1/1.png',
+        '/img/desks/1/2.png',
+        '/img/desks/1/1.png',
+        '/img/desks/1/2.png',
+      ],
     },
   },
   {
@@ -19,8 +34,8 @@ export const DESK_CATALOG = [
     ],
     price: '5 990р',
     images: {
-      Белый: ['/1/2.png', '/1/1.png', '/1/2.png'],
-      Черный: ['/1/1.png'],
+      Белый: ['/img/desks/1/2.png', '/img/desks/1/1.png', '/img/desks/1/2.png'],
+      Черный: ['/img/desks/1/1.png'],
     },
   },
   {
@@ -31,8 +46,13 @@ export const DESK_CATALOG = [
     ],
     price: '5 990р',
     images: {
-      Белый: ['/1/1.png', '/1/2.png', '/1/1.png', '/1/2.png'],
-      Черный: ['/1/1.png'],
+      Белый: [
+        '/img/desks/1/1.png',
+        '/img/desks/1/2.png',
+        '/img/desks/1/1.png',
+        '/img/desks/1/2.png',
+      ],
+      Черный: ['/img/desks/1/1.png'],
     },
   },
   {
@@ -43,8 +63,8 @@ export const DESK_CATALOG = [
     ],
     price: '5 990р',
     images: {
-      Белый: ['/1/2.png', '/1/1.png', '/1/2.png'],
-      Черный: ['/1/1.png'],
+      Белый: ['/img/desks/1/2.png', '/img/desks/1/1.png', '/img/desks/1/2.png'],
+      Черный: ['/img/desks/1/1.png'],
     },
   },
   {
@@ -55,8 +75,8 @@ export const DESK_CATALOG = [
     ],
     price: '5 990р',
     images: {
-      Белый: ['/1/2.png', '/1/1.png', '/1/2.png'],
-      Черный: ['/1/1.png'],
+      Белый: ['/img/desks/1/2.png', '/img/desks/1/1.png', '/img/desks/1/2.png'],
+      Черный: ['/img/desks/1/1.png'],
     },
   },
   {
@@ -67,8 +87,8 @@ export const DESK_CATALOG = [
     ],
     price: '5 990р',
     images: {
-      Белый: ['/1/2.png', '/1/1.png', '/1/2.png'],
-      Черный: ['/1/1.png'],
+      Белый: ['/img/desks/1/2.png', '/img/desks/1/1.png', '/img/desks/1/2.png'],
+      Черный: ['/img/desks/1/1.png'],
     },
   },
 ];

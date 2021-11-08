@@ -1,9 +1,13 @@
 <script>
   import Button from '../ui/Button.svelte'
 
+  import Desk from '../modals/Desk.svelte'
+
   import DeskColors from './DeskColors.svelte'
   import DeskDescription from './DeskDescription.svelte'
   import DeskSlider from './DeskSlider.svelte'
+
+  import { getContext } from 'svelte'
 
   export let name
   export let colors
@@ -15,10 +19,41 @@
   $: {
     currentImages = images[currentColor.name]
   }
+
+  const { open } = getContext('simple-modal')
+
+  const showDeskInfo = (activeImage = 0) => {
+    open(
+      Desk,
+      {
+        activeImage,
+        desk: {
+          color: currentColor,
+          images: images,
+          name,
+          colors,
+          price,
+        },
+      },
+      {
+        styleBg: {
+          background: 'rgba(0, 0, 0, 0.66)',
+        },
+        styleWindow: {
+          background: 'rgba(0,0,0,0)',
+          width: 'var(--modalWindowWidth)',
+          maxWidth: '1600px',
+        },
+      }
+    )
+  }
 </script>
 
 <div class="desk">
-  <DeskSlider images={currentImages} />
+  <DeskSlider
+    images={currentImages}
+    on:imageClick={({ detail }) => showDeskInfo(detail.activeImage)}
+  />
 
   <div class="icons" />
 
@@ -32,11 +67,11 @@
     </DeskDescription>
 
     <DeskDescription label="Цена">
-      <span>{price}</span>
+      <span class="price">{price}</span>
     </DeskDescription>
 
     <div class="more">
-      <Button styling="light">
+      <Button styling="light" on:click={() => showDeskInfo(0)}>
         <span>Подробнее</span>
       </Button>
     </div>
