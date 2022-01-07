@@ -20,7 +20,7 @@ I use this template for landing pages and high-performance projects, but it's ea
 
 ## Usage
 
-Click the button "Use this template" on the top of repository. Or just clone it and gelete .git folder :) 
+Click the button "Use this template" on the top of repository. Or just clone it and gelete .git folder :)
 I'll make it more comfortable in the future!
 
 ## Aliases
@@ -39,7 +39,8 @@ For customizing, check `/rollup.config.js`
 
 ## Image-minimizing && PNG -> WEBP configured
 
-For minifying your image, save it into `/src/images`. If you don't want to process images, save it to `/static` folder.
+For minifying your image, save it into `/src/images`, and start `yarn dev optimize`.
+If you don't want to process images, save it to `/static` folder.
 Save `png` and `jpeg` here and custom plugin will generate `webp`, `png`, `jpeg` kit for use by Svelte component (`@ui/Image.svelte`).
 For customize plugin config, see `/plugins/optimizeImages.js`.
 
@@ -145,6 +146,7 @@ I love contributions! I will happily accept your pull request! Your ideas might 
 If you find grammar errors, please correct me!
 
 ## Used by this sites:
+
 - http://niqitosiq.ru
 - http://assol.jaex.ru
 

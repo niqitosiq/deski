@@ -190,7 +190,7 @@ export default {
         include: './src/components/background/circles/*.svg',
       }),
 
-      optimizeImages(),
+      process.argv.includes('optimize') && optimizeImages(),
     ],
     external: Object.keys(pkg.dependencies).concat(require('module').builtinModules),
 
