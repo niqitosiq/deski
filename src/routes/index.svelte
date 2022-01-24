@@ -6,6 +6,7 @@
   import Consultation from '@/components/leads/Consultation.svelte'
   import Photos from '@/components/sections/photos/Photos.svelte'
   import Reviews from '@/components/sections/reviews/Reviews.svelte'
+  import Form from '@/components/leads/Form.svelte'
   import Contacts from '@/components/sections/contacts/Contacts.svelte'
   import { fadeIn, fadeOut } from '@/utils/pageFade'
 </script>
@@ -15,6 +16,7 @@
 </svelte:head>
 
 <div class="index" in:fadeIn out:fadeOut>
+  <Form />
   <Main />
   <Catalog />
   <Advantages />

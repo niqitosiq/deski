@@ -14,7 +14,6 @@
     position: relative;
     border: none;
     border-radius: 30px;
-    border: none;
     background-color: transparent;
     padding: 25px 35px;
     margin-top: 8px;
