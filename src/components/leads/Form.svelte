@@ -3,7 +3,12 @@
   import Button from '@/components/ui/Button.svelte'
   import Image from '../ui/Image.svelte'
 
-  let methods = ['Телефон', 'Viber', 'Telegram', 'WhatsApp']
+  let methods = [
+    { label: 'Телефон', icon: 'phone3' },
+    { label: 'Viber', icon: 'viber' },
+    { label: 'Telegram', icon: 'telegram' },
+    { label: 'WhatsApp', icon: 'whatsapp' },
+  ]
 
   let current = 'Телефон'
 </script>
@@ -21,7 +26,10 @@
           class:selected={current === method}
           on:click={() => (current = method)}
         >
-          {method}
+          <span class="name">
+            {method.label}
+          </span>
+          <Icon name={method.icon} />
         </button>
       {/each}
     </div>
@@ -67,14 +75,31 @@
       transform: translate(0px, 0px) skew(-5deg, 0deg);
       overflow: hidden;
       border-radius: 45px;
+
+      @media screen and (max-width: 618px) {
+        width: 120%;
+        left: -10%;
+      }
     }
   }
 
   .communication {
     padding-top: 70px;
-    padding-left: 100px;
+    padding-left: 73px;
     padding-bottom: 85px;
     flex-shrink: 0;
+
+    @media screen and (max-width: 618px) {
+      padding-left: 20px;
+    }
+
+    @media screen and (max-width: 370px) {
+      padding-right: 20px;
+    }
+
+    @media screen and (max-width: 350px) {
+      width: 100%;
+    }
   }
 
   h2 {
@@ -98,6 +123,15 @@
     @media screen and (max-width: 520px) {
       font-size: 28px;
     }
+
+    @media screen and (max-width: 340px) {
+      font-size: 26px;
+      margin-bottom: 20px;
+    }
+
+    @media screen and (max-width: 305px) {
+      font-size: 24px;
+    }
   }
 
   .buttons {
@@ -120,9 +154,31 @@
     border-radius: 10px;
     margin-right: 16px;
 
+    :global(svg) {
+      fill: white;
+      @media screen and (min-width: 1181px) {
+        display: none;
+      }
+    }
+
     @media screen and (max-width: 1180px) {
+      border-radius: 100%;
+      padding: 0;
       margin-bottom: 15px;
-      width: 35%;
+      width: 50px;
+      height: 50px;
+    }
+
+    @media screen and (max-width: 350px) {
+      width: 45px;
+      height: 45px;
+      margin-right: 10px;
+    }
+  }
+
+  .name {
+    @media screen and (max-width: 1180px) {
+      display: none;
     }
   }
 
@@ -135,6 +191,10 @@
 
   .phoneNumber {
     display: inline-block;
+
+    @media screen and (max-width: 420px) {
+      width: 100%;
+    }
   }
 
   .phone {
@@ -157,6 +217,17 @@
       margin-left: 17px;
       outline: none;
       color: black;
+    }
+
+    @media screen and (max-width: 420px) {
+      width: 100%;
+      :global(svg) {
+        flex-shrink: 0;
+      }
+      input {
+        width: 100%;
+        padding-right: 0;
+      }
     }
   }
 
@@ -185,6 +256,16 @@
     @media screen and (max-width: 1180px) {
       margin-right: 20px;
     }
+
+    @media screen and (max-width: 890px) {
+      margin-right: 0px;
+    }
+
+    @media screen and (max-width: 780px) {
+      position: absolute;
+      height: 100%;
+      overflow: hidden;
+    }
   }
 
   .hero {
@@ -206,7 +287,53 @@
     }
 
     @media screen and (max-width: 1180px) {
-      width: 160%;
+      width: 110%;
+    }
+
+    @media screen and (max-width: 1080px) {
+      width: 540px;
+    }
+
+    @media screen and (max-width: 940px) {
+      width: 400px;
+    }
+
+    @media screen and (max-width: 780px) {
+      left: 20%;
+      z-index: -1;
+      bottom: -90px;
+    }
+
+    @media screen and (max-width: 650px) {
+      left: 10%;
+    }
+
+    @media screen and (max-width: 500px) {
+      left: 0;
+    }
+
+    @media screen and (max-width: 435px) {
+      width: 360px;
+    }
+
+    @media screen and (max-width: 399px) {
+      width: 340px;
+    }
+
+    @media screen and (max-width: 378px) {
+      width: 320px;
+    }
+
+    @media screen and (max-width: 360px) {
+      width: 300px;
+    }
+
+    @media screen and (max-width: 340px) {
+      width: 280px;
+    }
+
+    @media screen and (max-width: 321px) {
+      width: 260px;
     }
   }
 </style>

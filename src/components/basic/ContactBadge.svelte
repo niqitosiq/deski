@@ -39,6 +39,7 @@
       align-items: flex-end;
       :global(svg) {
         margin-bottom: 3px;
+
         @media screen and (max-width: 1520px) {
           margin-bottom: 7px;
         }
