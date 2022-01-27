@@ -4,18 +4,24 @@
   import Image from '../ui/Image.svelte'
 
   let methods = [
-    { label: 'Телефон', icon: 'phone3' },
-    { label: 'Viber', icon: 'viber' },
-    { label: 'Telegram', icon: 'telegram' },
-    { label: 'WhatsApp', icon: 'whatsapp' },
+    { label: 'Телефон', icon: 'phone3', placeholder: 'Телефон' },
+    { label: 'Viber', icon: 'viber', placeholder: 'Имя или телефон' },
+    { label: 'Telegram', icon: 'telegram', placeholder: 'Имя или телефон' },
+    { label: 'WhatsApp', icon: 'whatsapp', placeholder: 'Телефон' },
   ]
 
-  let current = 'Телефон'
+  let currentMethod = methods[0]
+
+  let success = false
+
+  function toggle() {
+    success = !success
+  }
 </script>
 
 <section class="form container">
-  <div class="communication">
-    <h2>Нужна консультация?</h2>
+  <div class="communication" class:invisible={success}>
+    <h2 class="title">Нужна консультация?</h2>
     <p class="label">Выберите удобный способ связи</p>
 
     <div class="buttons">
@@ -23,8 +29,8 @@
         <button
           type="button"
           class="button"
-          class:selected={current === method}
-          on:click={() => (current = method)}
+          class:selected={currentMethod.label === method.label}
+          on:click={() => (currentMethod = method)}
         >
           <span class="name">
             {method.label}
@@ -38,12 +44,16 @@
       <label for="phone" class="label">Введите номер телефона</label>
       <div class="phone">
         <Icon name="phone2" />
-        <input type="text" id="phone" placeholder="Телефон" />
+        <input type="text" id="phone" placeholder={currentMethod.placeholder} />
       </div>
-      <Button>
+      <Button on:click={toggle}>
         <span>ЗАКАЗАТЬ ЗВОНОК</span>
       </Button>
     </form>
+  </div>
+
+  <div class="feedback" class:visible={success}>
+    <h2 class="title">Спасибо!<br /> Мы свяжемся с Вами в ближайшее время</h2>
   </div>
 
   <div class="wrapper">
@@ -89,6 +99,10 @@
     padding-bottom: 85px;
     flex-shrink: 0;
 
+    h2 {
+      margin-bottom: 40px;
+    }
+
     @media screen and (max-width: 618px) {
       padding-left: 20px;
     }
@@ -100,13 +114,17 @@
     @media screen and (max-width: 350px) {
       width: 100%;
     }
+
+    &.invisible {
+      opacity: 0;
+      pointer-events: none;
+    }
   }
 
-  h2 {
+  .title {
     font-family: 'Gilroy';
     font-weight: 700;
     font-size: 48px;
-    margin-bottom: 40px;
 
     @media screen and (max-width: 1650px) {
       font-size: 44px;
@@ -334,6 +352,45 @@
 
     @media screen and (max-width: 321px) {
       width: 260px;
+    }
+  }
+
+  .feedback {
+    position: absolute;
+    opacity: 0;
+    left: 100px;
+    top: 50%;
+    transform: translate(0, -50%);
+    max-width: 620px;
+    pointer-events: none;
+
+    &.visible {
+      opacity: 1;
+    }
+
+    @media screen and (max-width: 1050px) {
+      max-width: 330px;
+    }
+
+    @media screen and (max-width: 780px) {
+      top: 20%;
+    }
+
+    @media screen and (max-width: 620px) {
+      left: 50px;
+      top: 25%;
+    }
+
+    @media screen and (max-width: 580px) {
+      left: 40px;
+    }
+
+    @media screen and (max-width: 520px) {
+      max-width: 280px;
+    }
+
+    @media screen and (max-width: 420px) {
+      left: 35px;
     }
   }
 </style>
