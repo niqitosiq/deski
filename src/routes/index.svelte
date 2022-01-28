@@ -16,15 +16,15 @@
 </svelte:head>
 
 <div class="index" in:fadeIn out:fadeOut>
+  <Main />
   <Catalog />
   <Advantages />
-  <Form />
   <Consultation />
   <Payment />
   <Photos />
   <Reviews />
+  <Form />
   <Contacts />
-  <Main />
 </div>
 
 <style lang="scss">
