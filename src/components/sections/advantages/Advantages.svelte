@@ -3,6 +3,8 @@
 
   import Advantage from './Advantage.svelte'
 
+  import { viewClass } from '@/directives/inViewport'
+
   const advantages = [
     {
       label: 'Материалы премиум качества',
@@ -27,7 +29,7 @@
   ]
 </script>
 
-<section class="advantages" id="advantages">
+<section class="advantages" id="advantages" use:viewClass>
   <div class="container">
     <h2>Почему тебе необходим именно стол Deski?</h2>
 

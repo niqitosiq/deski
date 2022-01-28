@@ -149,3 +149,48 @@
     }
   }
 }
+
+.advantages {
+  h2 {
+    opacity: 0;
+    transition: opacity ease 0.6s 0.1s;
+  }
+
+  .advantage {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: transform ease 0.7s, opacity ease 0.7s;
+
+    @for $i from 1 through 4 {
+      &:nth-child(#{$i}) {
+        transition-delay: #{200 + 250 * $i} + 'ms';
+
+        .image {
+          transition-delay: #{175 + 250 * $i} + 'ms';
+        }
+      }
+    }
+  }
+
+  .image {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: transform ease 2s, opacity ease 2s;
+  }
+
+  &.visible {
+    h2 {
+      opacity: 1;
+    }
+
+    .advantage {
+      opacity: 1;
+      transform: translateY(0px);
+    }
+
+    .image {
+      opacity: 1;
+      transform: translateY(0px);
+    }
+  }
+}
