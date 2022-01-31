@@ -1,9 +1,12 @@
 <script>
   import Socials from '../basic/Social/Socials.svelte'
+
   import Image from '../ui/Image.svelte'
+
+  import { viewClass } from '@/directives/inViewport'
 </script>
 
-<section class="consultation container">
+<section class="consultation container" use:viewClass>
   <div class="background">
     <Image src="/img/lead/lead-background-1.png" alt="Фон блока" />
   </div>

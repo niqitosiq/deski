@@ -5,7 +5,10 @@ const observers = {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
         entry.target.classList.add('visible');
-        intersectionObservers['class'].unobserve(entry.target);
+        // intersectionObservers['class'].unobserve(entry.target);
+      } else {
+
+        entry.target.classList.remove('visible');
       }
     });
   },

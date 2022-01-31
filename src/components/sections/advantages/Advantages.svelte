@@ -55,9 +55,9 @@
     }
     @media screen and (max-width: 520px) {
       padding-top: 30px;
-    }
-    .container {
-      position: relative;
+      .container {
+        position: relative;
+      }
     }
   }
   .items {
