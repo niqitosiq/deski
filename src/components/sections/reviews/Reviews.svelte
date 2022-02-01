@@ -2,10 +2,13 @@
   import { REVIEWS } from '@/consts/reviews'
 
   import Review from './Review.svelte'
+
   import Image from '@/components/ui/Image.svelte'
+
+  import { viewClass } from '@/directives/inViewport'
 </script>
 
-<section class="container">
+<section class="container" id="reviews" use:viewClass>
   <div class="background">
     <Image
       src="/img/reviews/background.png"

@@ -254,6 +254,7 @@
     opacity: 0;
     transform: translateY(30px);
     transition: transform ease 0.7s, opacity ease 0.7s;
+
     @for $i from 1 through 5 {
       &:nth-child(#{$i}) {
         transition-delay: #{150 * $i} + 'ms';
@@ -265,6 +266,7 @@
     opacity: 0;
     transform: translateY(30px);
     transition: transform ease 0.7s, opacity ease 0.7s;
+
     @for $i from 1 through 5 {
       &:nth-child(#{$i}) {
         transition-delay: #{250 + 150 * $i} + 'ms';
@@ -286,6 +288,248 @@
     }
 
     .dota {
+      opacity: 1;
+      transform: translateY(0px);
+    }
+  }
+}
+
+.photos {
+  h2 {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: transform ease 1s 0s, opacity ease 1s 0s;
+  }
+
+  .images {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: transform ease 0.7s 0.1s, opacity ease 0.7s 0.1s;
+  }
+
+  &.visible {
+    h2 {
+      opacity: 1;
+      transform: translateY(0px);
+    }
+
+    .images {
+      opacity: 1;
+      transform: translateY(0px);
+    }
+  }
+}
+
+#reviews {
+  h2 {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: transform ease 1.2s 0s, opacity ease 1.2s 0s;
+  }
+
+  .review {
+    .body {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: transform ease 1.4s, opacity ease 1.4s;
+    }
+
+    .avatar {
+      opacity: 0;
+      transform: scale(0.5);
+      transition: transform ease 1.4s, opacity ease 1.4s;
+    }
+
+    @for $i from 0 through 2 {
+      &:nth-child(#{$i + 1}) {
+        .body {
+          transition-delay: #{500 * $i} + 'ms';
+        }
+
+        .avatar {
+          transition-delay: #{200 + 500 * $i} + 'ms';
+        }
+      }
+    }
+  }
+
+  &.visible {
+    h2 {
+      opacity: 1;
+      transform: translateY(0px);
+    }
+
+    .body {
+      opacity: 1;
+      transform: translateY(0px);
+    }
+
+    .avatar {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+}
+
+.form {
+  &::before {
+    opacity: 0;
+    transition: opacity ease 1.2s 0s;
+  }
+
+  .title {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: transform ease 1.2s 0.1s, opacity ease 1.2s 0.1s;
+  }
+
+  p.label {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: transform ease 1s 0.2s, opacity ease 1s 0.2s;
+  }
+
+  .button {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: transform ease 0.7s, opacity ease 0.7s;
+    @for $i from 1 through 4 {
+      &:nth-child(#{$i}) {
+        transition-delay: #{300 * $i} + 'ms';
+      }
+    }
+  }
+
+  label.label {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: transform ease 0.7s 0.35s, opacity ease 0.7s 0.35s;
+  }
+
+  .phone,
+  .hero {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: transform ease 0.7s 0.65s, opacity ease 0.7s 0.65s;
+  }
+
+  .order {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: transform ease 0.7s 0.95s, opacity ease 0.7s 0.95s;
+  }
+
+  &.visible {
+    &::before {
+      opacity: 1;
+    }
+
+    .title {
+      opacity: 1;
+      transform: translateY(0px);
+    }
+
+    p.label {
+      opacity: 1;
+      transform: translateY(0px);
+    }
+
+    .button {
+      opacity: 1;
+      transform: translateY(0px);
+    }
+
+    label.label {
+      opacity: 1;
+      transform: translateY(0px);
+    }
+
+    .phone,
+    .hero {
+      opacity: 1;
+      transform: translateY(0px);
+    }
+
+    .order {
+      opacity: 1;
+      transform: translateY(0px);
+    }
+  }
+}
+
+#contacts {
+  h2 {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: transform ease 1.2s 0s, opacity ease 1.2s 0s;
+  }
+
+  .contact-badge {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: transform ease 0.7s, opacity ease 0.7s;
+
+    .content {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: transform ease 0.7s, opacity ease 0.7s;
+    }
+
+    @for $i from 1 through 2 {
+      &:nth-child(#{$i}) {
+        transition-delay: #{100 * $i} + 'ms';
+
+        .content {
+          transition-delay: #{200 * $i} + 'ms';
+        }
+      }
+    }
+  }
+
+  .socials .content {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: transform ease 0.7s, opacity ease 0.7s;
+    @for $i from 1 through 4 {
+      &:nth-child(#{$i}) {
+        transition-delay: #{300 + 100 * $i} + 'ms';
+      }
+    }
+  }
+
+  .right a {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: transform ease 0.7s, opacity ease 0.7s;
+    @for $i from 1 through 2 {
+      &:nth-child(#{$i}) {
+        transition-delay: #{600 + 200 * $i} + 'ms';
+      }
+    }
+  }
+
+  &.visible {
+    h2 {
+      opacity: 1;
+      transform: translateY(0px);
+    }
+
+    .contact-badge {
+      opacity: 1;
+      transform: translateY(0px);
+
+      .content {
+        opacity: 1;
+        transform: translateY(0px);
+      }
+    }
+
+    .socials .content {
+      opacity: 1;
+      transform: translateY(0px);
+    }
+
+    .right a {
       opacity: 1;
       transform: translateY(0px);
     }

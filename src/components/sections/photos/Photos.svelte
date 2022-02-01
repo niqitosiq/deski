@@ -6,6 +6,8 @@
   import { PHOTOS } from '@/consts/photos'
   import { getContext } from 'svelte'
 
+  import { viewClass } from '@/directives/inViewport'
+
   let photoFormatted = []
   let mainImage = {}
 
@@ -42,7 +44,7 @@
   }
 </script>
 
-<section class="photos container">
+<section class="photos container" use:viewClass>
   <h2>Фото наших столов</h2>
 
   <div class="images">
