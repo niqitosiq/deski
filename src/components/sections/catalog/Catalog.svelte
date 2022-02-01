@@ -1,7 +1,6 @@
 <script>
   import Desk from '@/components/desk/Desk.svelte'
   import { viewClass } from '@/directives/inViewport'
-
   import { DESK_CATALOG } from '@/consts/catalog'
 </script>
 

@@ -1,6 +1,5 @@
 <script>
   import Image from '@/components/ui/Image.svelte'
-
   import { viewClass } from '@/directives/inViewport'
 </script>
 

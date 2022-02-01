@@ -1,12 +1,8 @@
 <script>
   import ContactBadge from '@/components/basic/ContactBadge.svelte'
-
   import Social from '@/components/basic/Social/Social.svelte'
-
   import Socials from '@/components/basic/Social/Socials.svelte'
-
   import Button from '@/components/ui/Button.svelte'
-
   import { viewClass } from '@/directives/inViewport'
 
   const contacts = [

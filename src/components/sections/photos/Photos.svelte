@@ -1,11 +1,8 @@
 <script>
   import Gallery from '@/components/gallery/Gallery.svelte'
-
   import Image from '@/components/ui/Image.svelte'
-
   import { PHOTOS } from '@/consts/photos'
   import { getContext } from 'svelte'
-
   import { viewClass } from '@/directives/inViewport'
 
   let photoFormatted = []

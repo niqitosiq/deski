@@ -1,8 +1,6 @@
 <script>
   import Image from '@/components/ui/Image.svelte'
-
   import Advantage from './Advantage.svelte'
-
   import { viewClass } from '@/directives/inViewport'
 
   const advantages = [
