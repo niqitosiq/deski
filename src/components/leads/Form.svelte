@@ -1,10 +1,7 @@
 <script>
   import Icon from '@/components/ui/Icon.svelte'
-
   import Button from '@/components/ui/Button.svelte'
-
   import Image from '../ui/Image.svelte'
-
   import { viewClass } from '@/directives/inViewport'
 
   let methods = [

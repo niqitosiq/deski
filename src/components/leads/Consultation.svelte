@@ -1,8 +1,6 @@
 <script>
   import Socials from '../basic/Social/Socials.svelte'
-
   import Image from '../ui/Image.svelte'
-
   import { viewClass } from '@/directives/inViewport'
 </script>
 
