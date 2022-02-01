@@ -3,6 +3,7 @@
   import Social from '@/components/basic/Social/Social.svelte'
   import Socials from '@/components/basic/Social/Socials.svelte'
   import Button from '@/components/ui/Button.svelte'
+  import { viewClass } from '@/directives/inViewport'
 
   const contacts = [
     {
@@ -22,7 +23,7 @@
   ]
 </script>
 
-<section id="contacts">
+<section id="contacts" use:viewClass>
   <div class="container">
     <h2>Наши контакты</h2>
 
@@ -64,6 +65,7 @@
 
 <style lang="scss">
   #contacts {
+    padding-bottom: 300px;
     margin-top: 100px;
     @media screen and (max-width: 1240px) {
       margin-top: 200px;

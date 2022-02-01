@@ -25,7 +25,9 @@
 
 <div class="socials" class:big={styling === 'big'}>
   {#each socials as social}
-    <Social {...social} />
+    <div class="content">
+      <Social {...social} />
+    </div>
   {/each}
 </div>
 

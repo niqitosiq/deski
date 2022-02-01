@@ -6,7 +6,7 @@ const observers = {
       if (entry.isIntersecting) {
         entry.target.classList.add('visible');
         intersectionObservers['class'].unobserve(entry.target);
-      }
+      } 
     });
   },
   default: (entries) => {

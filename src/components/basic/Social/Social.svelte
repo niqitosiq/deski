@@ -65,9 +65,11 @@
     }
     &.icon--telegram {
       background-color: #039be5;
+      transition: background-color ease 0.3s;
     }
     &.icon--vk {
       background-color: #4d76a1;
+      transition: background-color ease 0.3s;
     }
     &:hover {
       &.icon--instagram {

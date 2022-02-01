@@ -1,7 +1,6 @@
 <script>
   import Button from '@/components/ui/Button.svelte'
   import Icon from '@/components/ui/Icon.svelte'
-
   import Image from '@/components/ui/Image.svelte'
 </script>
 

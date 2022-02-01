@@ -1,7 +1,7 @@
 <script>
   import Image from '@/components/ui/Image.svelte'
-
   import Advantage from './Advantage.svelte'
+  import { viewClass } from '@/directives/inViewport'
 
   const advantages = [
     {
@@ -27,7 +27,7 @@
   ]
 </script>
 
-<section class="advantages" id="advantages">
+<section class="advantages" id="advantages" use:viewClass>
   <div class="container">
     <h2>Почему тебе необходим именно стол Deski?</h2>
 
@@ -53,9 +53,9 @@
     }
     @media screen and (max-width: 520px) {
       padding-top: 30px;
-    }
-    .container {
-      position: relative;
+      .container {
+        position: relative;
+      }
     }
   }
   .items {

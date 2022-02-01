@@ -1,7 +1,6 @@
 <script>
   import Attachment from '@/components/basic/Attachment.svelte'
   import Gallery from '@/components/gallery/Gallery.svelte'
-
   import { getContext } from 'svelte'
 
   export let align

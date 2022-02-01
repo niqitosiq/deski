@@ -2,6 +2,7 @@
   import Icon from '@/components/ui/Icon.svelte'
   import Button from '@/components/ui/Button.svelte'
   import Image from '../ui/Image.svelte'
+  import { viewClass } from '@/directives/inViewport'
 
   let methods = [
     { label: 'Телефон', icon: 'phone3', placeholder: 'Телефон' },
@@ -19,7 +20,7 @@
   }
 </script>
 
-<section class="form container">
+<section class="form container" use:viewClass>
   <div class="communication" class:invisible={success}>
     <h2 class="title">Нужна консультация?</h2>
     <p class="label">Выберите удобный способ связи</p>
@@ -46,7 +47,7 @@
         <Icon name="phone2" />
         <input type="text" id="phone" placeholder={currentMethod.placeholder} />
       </div>
-      <Button on:click={toggle}>
+      <Button styling="order" on:click={toggle}>
         <span>ЗАКАЗАТЬ ЗВОНОК</span>
       </Button>
     </form>
@@ -172,6 +173,32 @@
     border-radius: 10px;
     margin-right: 16px;
 
+    &::before {
+      content: '';
+      position: absolute;
+      width: calc(100% + 2px);
+      height: calc(100% + 2px);
+      background-color: #6592ff;
+      left: -1px;
+      top: -1px;
+      z-index: -1;
+      border-radius: 10px;
+      opacity: 0;
+      transition: opacity ease 0.3s;
+    }
+
+    &:hover {
+      &::before {
+        opacity: 0.2;
+      }
+    }
+
+    &.selected {
+      &::before {
+        opacity: 1;
+      }
+    }
+
     :global(svg) {
       fill: white;
       @media screen and (min-width: 1181px) {
@@ -198,13 +225,6 @@
     @media screen and (max-width: 1180px) {
       display: none;
     }
-  }
-
-  .selected {
-    background-color: #6592ff;
-    color: white;
-    border: rgba(255, 255, 255, 0) 1px solid;
-    transition: background-color 0.3s ease, border 0.3s ease;
   }
 
   .phoneNumber {

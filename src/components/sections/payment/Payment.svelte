@@ -1,11 +1,13 @@
 <script>
   import Image from '@/components/ui/Image.svelte'
+  import { viewClass } from '@/directives/inViewport'
 </script>
 
-<section class="container payment-delivery">
-  <div class="wrapper">
+<section class="container payment-delivery" use:viewClass>
+  <div class="wrapper payment">
     <h2 class="title">Оплата</h2>
     <p class="subtitle">Виды оплаты:</p>
+
     <div class="cloud">
       <p class="type">Онлайн-оплата:</p>
       <div class="image">
@@ -24,7 +26,7 @@
     </div>
   </div>
 
-  <div class="wrapper">
+  <div class="wrapper delivery">
     <h2 class="title">Доставка</h2>
     <p class="subtitle">Виды доставок:</p>
 
@@ -114,6 +116,7 @@
     width: 434px;
     right: 75px;
     top: 50px;
+    z-index: -1;
     @media screen and (max-width: 1465px) {
       right: 50px;
       top: 70px;
@@ -154,7 +157,6 @@
       width: 300px;
       right: -40%;
       bottom: 100px;
-      z-index: -1;
     }
   }
   .wrapper {
