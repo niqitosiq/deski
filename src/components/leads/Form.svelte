@@ -185,6 +185,10 @@
       border-radius: 10px;
       opacity: 0;
       transition: opacity ease 0.3s;
+
+      @media screen and (max-width: 1180px) {
+        border-radius: 100%;
+      }
     }
 
     &:hover {
@@ -303,6 +307,7 @@
       position: absolute;
       height: 100%;
       overflow: hidden;
+      z-index: -1;
     }
   }
 
