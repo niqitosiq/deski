@@ -99,6 +99,7 @@
     padding-left: 73px;
     padding-bottom: 85px;
     flex-shrink: 0;
+    transition: opacity ease 0.7s 0s;
 
     h2 {
       margin-bottom: 40px;
@@ -385,12 +386,14 @@
     opacity: 0;
     left: 100px;
     top: 50%;
-    transform: translate(0, -50%);
+    transform: translateY(calc(-50% + 30px));
     max-width: 620px;
     pointer-events: none;
+    transition: transform ease 1.2s 0.3s, opacity ease 1.2s 0.3s;
 
     &.visible {
       opacity: 1;
+      transform: translateY(-50%);
     }
 
     @media screen and (max-width: 1050px) {
