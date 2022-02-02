@@ -3,7 +3,7 @@
   import { viewClass } from '@/directives/inViewport'
 </script>
 
-<section class="container payment-delivery" use:viewClass>
+<section class="container payment-delivery" id="delivery" use:viewClass>
   <div class="wrapper payment">
     <h2 class="title">Оплата</h2>
     <p class="subtitle">Виды оплаты:</p>
