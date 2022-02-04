@@ -1,6 +1,7 @@
 <script>
   import Attachment from '@/components/basic/Attachment.svelte'
   import Gallery from '@/components/gallery/Gallery.svelte'
+import { DEFAULT_MODAL_CONFIG } from '@/consts/modals';
   import { getContext } from 'svelte'
 
   export let align
@@ -35,16 +36,7 @@
         images: attachments,
         active,
       },
-      {
-        styleBg: {
-          background: 'rgba(0, 0, 0, 0.66)',
-        },
-        styleWindow: {
-          background: 'rgba(0,0,0,0)',
-          width: 'var(--modalWindowWidth)',
-          maxWidth: '1600px',
-        },
-      }
+      DEFAULT_MODAL_CONFIG
     )
   }
 </script>

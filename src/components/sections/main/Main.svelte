@@ -6,6 +6,25 @@
   import MainAdvantages from './MainAdvantages.svelte'
   import MainBuyers from './MainBuyers.svelte'
   import MainDesk from './MainDesk.svelte'
+  import { getContext } from 'svelte'
+  import LeadPopup from '@/components/modals/LeadPopup.svelte'
+  import { DEFAULT_MODAL_CONFIG } from '@/consts/modals'
+
+  const { open } = getContext('simple-modal')
+
+  const showPopup = () => {
+    open(
+      LeadPopup,
+      {},
+      {
+        ...DEFAULT_MODAL_CONFIG,
+        styleWindow: {
+          ...DEFAULT_MODAL_CONFIG.styleWindow,
+          maxWidth: '1140px',
+        },
+      }
+    )
+  }
 </script>
 
 <section class="main" id="main" use:viewClass>
@@ -28,7 +47,7 @@
 
       <div class="lead">
         <div class="button">
-          <Button>
+          <Button on:click={showPopup}>
             <span>Получите бесплатную консультацию </span>
           </Button>
           <div class="discount">

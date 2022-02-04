@@ -1,8 +1,8 @@
 <script>
   import Icon from '@/components/ui/Icon.svelte'
   import Button from '@/components/ui/Button.svelte'
-  import Image from '../ui/Image.svelte'
-  import { viewClass } from '@/directives/inViewport'
+
+  export let title
 
   let methods = [
     { label: 'Телефон', icon: 'phone3', placeholder: 'Телефон' },
@@ -20,85 +20,47 @@
   }
 </script>
 
-<section class="form container" use:viewClass>
-  <div class="communication" class:invisible={success}>
-    <h2 class="title">Нужна консультация?</h2>
-    <p class="label">Выберите удобный способ связи</p>
+<div class="communication" class:invisible={success}>
+  <h2 class="title">{title}</h2>
+  <p class="label">Выберите удобный способ связи</p>
 
-    <div class="buttons">
-      {#each methods as method}
-        <button
-          type="button"
-          class="button"
-          class:selected={currentMethod.label === method.label}
-          on:click={() => (currentMethod = method)}
-        >
-          <span class="name">
-            {method.label}
-          </span>
-          <Icon name={method.icon} />
-        </button>
-      {/each}
+  <div class="buttons">
+    {#each methods as method}
+      <button
+        type="button"
+        class="button"
+        class:selected={currentMethod.label === method.label}
+        on:click={() => (currentMethod = method)}
+      >
+        <span class="name">
+          {method.label}
+        </span>
+        <Icon name={method.icon} />
+      </button>
+    {/each}
+  </div>
+
+  <form name="phone" class="phoneNumber">
+    <label for="phone" class="label">Введите номер телефона</label>
+    <div class="phone">
+      <Icon name="phone2" />
+      <input type="text" id="phone" placeholder={currentMethod.placeholder} />
     </div>
+    <Button styling="order" on:click={toggle}>
+      <span>ЗАКАЗАТЬ ЗВОНОК</span>
+    </Button>
+  </form>
+</div>
 
-    <form name="phone" class="phoneNumber">
-      <label for="phone" class="label">Введите номер телефона</label>
-      <div class="phone">
-        <Icon name="phone2" />
-        <input type="text" id="phone" placeholder={currentMethod.placeholder} />
-      </div>
-      <Button styling="order" on:click={toggle}>
-        <span>ЗАКАЗАТЬ ЗВОНОК</span>
-      </Button>
-    </form>
-  </div>
-
-  <div class="feedback" class:visible={success}>
-    <h2 class="title">Спасибо!<br /> Мы свяжемся с Вами в ближайшее время</h2>
-  </div>
-
-  <div class="wrapper">
-    <div class="hero">
-      <Image src="/img/lead/lead-hero-2.png" alt="Каустик из Apex Legends" />
-    </div>
-  </div>
-</section>
+<div class="feedback" class:visible={success}>
+  <h2 class="title">Спасибо!<br /> Мы свяжемся с Вами в ближайшее время</h2>
+</div>
 
 <style lang="scss">
-  .form {
-    position: relative;
-    display: flex;
-    justify-content: space-between;
-    margin-top: 235px;
-    margin-bottom: 115px;
-
-    &::before {
-      position: absolute;
-      content: '';
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(
-        90deg,
-        #011d34 1.31%,
-        rgba(78, 113, 240, 0.9) 72.51%
-      );
-      z-index: -1;
-      transform: translate(0px, 0px) skew(-5deg, 0deg);
-      overflow: hidden;
-      border-radius: 45px;
-
-      @media screen and (max-width: 618px) {
-        width: 120%;
-        left: -10%;
-      }
-    }
-  }
-
   .communication {
     padding-top: 70px;
     padding-left: 73px;
     padding-bottom: 85px;
-    flex-shrink: 0;
     transition: opacity ease 0.7s 0s;
 
     h2 {
@@ -173,6 +135,7 @@
     padding: 8px 30px 8px 30px;
     border-radius: 10px;
     margin-right: 16px;
+    position: relative;
 
     &::before {
       content: '';
@@ -182,7 +145,7 @@
       background-color: #6592ff;
       left: -1px;
       top: -1px;
-      z-index: -1;
+      z-index: 1;
       border-radius: 10px;
       opacity: 0;
       transition: opacity ease 0.3s;
@@ -206,6 +169,8 @@
 
     :global(svg) {
       fill: white;
+      position: relative;
+      z-index: 2;
       @media screen and (min-width: 1181px) {
         display: none;
       }
@@ -227,6 +192,8 @@
   }
 
   .name {
+    position: relative;
+    z-index: 2;
     @media screen and (max-width: 1180px) {
       display: none;
     }
@@ -280,105 +247,6 @@
     font-weight: 400;
     font-size: 16px;
     margin-bottom: 15px;
-  }
-
-  .wrapper {
-    width: 100%;
-    max-width: 733px;
-    position: relative;
-    margin-right: 200px;
-
-    @media screen and (max-width: 1590px) {
-      margin-right: 100px;
-    }
-
-    @media screen and (max-width: 1340px) {
-      margin-right: 50px;
-    }
-
-    @media screen and (max-width: 1180px) {
-      margin-right: 20px;
-    }
-
-    @media screen and (max-width: 890px) {
-      margin-right: 0px;
-    }
-
-    @media screen and (max-width: 780px) {
-      position: absolute;
-      height: 100%;
-      overflow: hidden;
-      z-index: -1;
-    }
-  }
-
-  .hero {
-    position: absolute;
-    bottom: 0;
-
-    @media screen and (max-width: 1460px) {
-      width: 120%;
-    }
-
-    @media screen and (max-width: 1340px) {
-      width: 135%;
-      right: 10px;
-      z-index: -1;
-    }
-
-    @media screen and (max-width: 1210px) {
-      width: 145%;
-    }
-
-    @media screen and (max-width: 1180px) {
-      width: 110%;
-    }
-
-    @media screen and (max-width: 1080px) {
-      width: 540px;
-    }
-
-    @media screen and (max-width: 940px) {
-      width: 400px;
-    }
-
-    @media screen and (max-width: 780px) {
-      left: 20%;
-      z-index: -1;
-      bottom: -90px;
-    }
-
-    @media screen and (max-width: 650px) {
-      left: 10%;
-    }
-
-    @media screen and (max-width: 500px) {
-      left: 0;
-    }
-
-    @media screen and (max-width: 435px) {
-      width: 360px;
-    }
-
-    @media screen and (max-width: 399px) {
-      width: 340px;
-    }
-
-    @media screen and (max-width: 378px) {
-      width: 320px;
-    }
-
-    @media screen and (max-width: 360px) {
-      width: 300px;
-    }
-
-    @media screen and (max-width: 340px) {
-      width: 280px;
-    }
-
-    @media screen and (max-width: 321px) {
-      width: 260px;
-    }
   }
 
   .feedback {
