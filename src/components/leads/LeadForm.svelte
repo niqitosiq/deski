@@ -4,6 +4,8 @@
 
   export let title
 
+  export let smallMargin
+
   let methods = [
     { label: 'Телефон', icon: 'phone3', placeholder: 'Телефон' },
     { label: 'Viber', icon: 'viber', placeholder: 'Имя или телефон' },
@@ -29,6 +31,7 @@
       <button
         type="button"
         class="button"
+        class:smallMargin
         class:selected={currentMethod.label === method.label}
         on:click={() => (currentMethod = method)}
       >
@@ -134,7 +137,7 @@
     border: rgba(255, 255, 255, 0.3) 1px solid;
     padding: 8px 30px 8px 30px;
     border-radius: 10px;
-    margin-right: 16px;
+    margin-right: 15px;
     position: relative;
 
     &::before {
@@ -164,6 +167,20 @@
     &.selected {
       &::before {
         opacity: 1;
+      }
+    }
+
+    &.smallMargin {
+      @media screen and (max-width: 401px) {
+        margin-right: 10px;
+      }
+
+      @media screen and (max-width: 382px) {
+        margin-right: 5px;
+      }
+
+      @media screen and (max-width: 320px) {
+        margin-right: 15px;
       }
     }
 
@@ -229,7 +246,7 @@
       color: black;
     }
 
-    @media screen and (max-width: 420px) {
+    @media screen and (max-width: 455px) {
       width: 100%;
       :global(svg) {
         flex-shrink: 0;

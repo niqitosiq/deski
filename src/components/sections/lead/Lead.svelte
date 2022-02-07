@@ -6,7 +6,7 @@
 
 <section class="form container" use:viewClass>
   <div class="lead">
-    <LeadForm title="Нужна консультация?" />
+    <LeadForm title="Нужна консультация?" smallMargin={false} />
   </div>
 
   <div class="wrapper">
