@@ -158,10 +158,34 @@
       }
     }
 
+    :global(svg) {
+      fill: white;
+      position: relative;
+      z-index: 2;
+
+      @media screen and (min-width: 1181px) {
+        display: none;
+      }
+    }
+
     &:hover {
       &::before {
         opacity: 0.2;
       }
+    }
+
+    @media screen and (max-width: 1180px) {
+      border-radius: 100%;
+      padding: 0;
+      margin-bottom: 15px;
+      width: 50px;
+      height: 50px;
+    }
+
+    @media screen and (max-width: 350px) {
+      width: 45px;
+      height: 45px;
+      margin-right: 10px;
     }
 
     &.selected {
@@ -183,34 +207,12 @@
         margin-right: 15px;
       }
     }
-
-    :global(svg) {
-      fill: white;
-      position: relative;
-      z-index: 2;
-      @media screen and (min-width: 1181px) {
-        display: none;
-      }
-    }
-
-    @media screen and (max-width: 1180px) {
-      border-radius: 100%;
-      padding: 0;
-      margin-bottom: 15px;
-      width: 50px;
-      height: 50px;
-    }
-
-    @media screen and (max-width: 350px) {
-      width: 45px;
-      height: 45px;
-      margin-right: 10px;
-    }
   }
 
   .name {
     position: relative;
     z-index: 2;
+
     @media screen and (max-width: 1180px) {
       display: none;
     }
@@ -248,9 +250,11 @@
 
     @media screen and (max-width: 455px) {
       width: 100%;
+
       :global(svg) {
         flex-shrink: 0;
       }
+
       input {
         width: 100%;
         padding-right: 0;
@@ -276,11 +280,6 @@
     pointer-events: none;
     transition: transform ease 1.2s 0.3s, opacity ease 1.2s 0.3s;
 
-    &.visible {
-      opacity: 1;
-      transform: translateY(-50%);
-    }
-
     @media screen and (max-width: 1050px) {
       max-width: 330px;
     }
@@ -304,6 +303,11 @@
 
     @media screen and (max-width: 420px) {
       left: 35px;
+    }
+
+    &.visible {
+      opacity: 1;
+      transform: translateY(-50%);
     }
   }
 </style>
