@@ -30,6 +30,10 @@
     @media screen and (max-width: 541px) {
       padding-left: 30px;
     }
+
+    @media screen and (max-width: 370px) {
+      padding: 5px 3px;
+    }
   }
 
   .lead {
@@ -44,16 +48,20 @@
     max-width: 390px;
     z-index: 1;
 
-    @media screen and (max-width: 1280px) {
-      max-width: 350px;
+    @media screen and (max-width: 1400px) {
+      max-width: 370px;
+    }
+
+    @media screen and (max-width: 1360px) {
+      max-width: 330px;
+    }
+
+    @media screen and (max-width: 1310px) {
+      max-width: 310px;
     }
 
     @media screen and (max-width: 1180px) {
       top: 140px;
-    }
-
-    @media screen and (max-width: 1030px) {
-      max-width: 320px;
     }
 
     @media screen and (max-width: 860px) {
@@ -63,7 +71,7 @@
     }
 
     @media screen and (max-width: 780px) {
-      bottom: -120px;
+      bottom: -110px;
     }
 
     @media screen and (max-width: 700px) {
@@ -72,24 +80,24 @@
     }
 
     @media screen and (max-width: 660px) {
-      bottom: -90px;
+      bottom: -70px;
+    }
+
+    @media screen and (max-width: 425px) {
+      bottom: -80px;
     }
 
     @media screen and (max-width: 418px) {
-      bottom: -95px;
+      bottom: -75px;
     }
 
     @media screen and (max-width: 386px) {
-      bottom: -110px;
+      bottom: -80px;
     }
 
     @media screen and (max-width: 375px) {
-      max-width: 240px;
-    }
-
-    @media screen and (max-width: 321px) {
-      max-width: 220px;
-      bottom: -140px;
+      bottom: -90px;
+      max-width: 250px;
     }
   }
 </style>

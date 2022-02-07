@@ -176,7 +176,7 @@
       }
 
       @media screen and (max-width: 382px) {
-        margin-right: 5px;
+        margin-right: 7px;
       }
 
       @media screen and (max-width: 320px) {
