@@ -4,6 +4,7 @@
   import { PHOTOS } from '@/consts/photos'
   import { getContext } from 'svelte'
   import { viewClass } from '@/directives/inViewport'
+  import { DEFAULT_MODAL_CONFIG } from '@/consts/modals'
 
   let photoFormatted = []
   let mainImage = {}
@@ -27,16 +28,7 @@
         images: PHOTOS,
         active,
       },
-      {
-        styleBg: {
-          background: 'rgba(0, 0, 0, 0.66)',
-        },
-        styleWindow: {
-          background: 'rgba(0,0,0,0)',
-          width: 'var(--modalWindowWidth)',
-          maxWidth: '1600px',
-        },
-      }
+      DEFAULT_MODAL_CONFIG
     )
   }
 </script>

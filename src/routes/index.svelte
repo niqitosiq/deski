@@ -6,7 +6,7 @@
   import Consultation from '@/components/leads/Consultation.svelte'
   import Photos from '@/components/sections/photos/Photos.svelte'
   import Reviews from '@/components/sections/reviews/Reviews.svelte'
-  import Form from '@/components/leads/Form.svelte'
+  import Lead from '@/components/sections/lead/Lead.svelte'
   import Contacts from '@/components/sections/contacts/Contacts.svelte'
   import { fadeIn, fadeOut } from '@/utils/pageFade'
 </script>
@@ -23,7 +23,7 @@
   <Payment />
   <Photos />
   <Reviews />
-  <Form />
+  <Lead />
   <Contacts />
 </div>
 

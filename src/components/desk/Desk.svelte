@@ -8,6 +8,7 @@
   import DeskSlider from './DeskSlider.svelte'
 
   import { getContext } from 'svelte'
+  import { DEFAULT_MODAL_CONFIG } from '@/consts/modals'
 
   export let name
   export let colors
@@ -39,21 +40,7 @@
           slug,
         },
       },
-      {
-        styleBg: {
-          background: 'rgba(0, 0, 0, 0.66)',
-          overflow: 'auto',
-        },
-        styleWindow: {
-          background: 'rgba(0,0,0,0)',
-          width: 'var(--modalWindowWidth)',
-          maxWidth: '1600px',
-          overflow: 'visible',
-        },
-        styleContent: {
-          overflow: 'visible',
-        },
-      }
+      DEFAULT_MODAL_CONFIG
     )
   }
 </script>
