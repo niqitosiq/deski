@@ -45,10 +45,9 @@
     @media screen and (max-width: 920px) {
       max-width: 100%;
       position: relative;
-      margin-top: 40px;
     }
     @media screen and (max-width: 420px) {
-      margin-top: 10px;
+      margin-top: 50px;
     }
   }
 
@@ -75,16 +74,20 @@
     bottom: 0;
     display: flex;
 
-    @media screen and (max-width: 920px) {
-      left: 50%;
-      bottom: 50%;
-      transform: translate(-50%, -50%);
-    }
-
     :global(svg) {
       width: 24px;
       height: 24px;
       z-index: 20;
+    }
+
+    @media screen and (max-width: 1024px) {
+      left: -65%;
+    }
+
+    @media screen and (max-width: 920px) {
+      left: 50%;
+      bottom: 50%;
+      transform: translate(-50%, -50%);
     }
   }
 

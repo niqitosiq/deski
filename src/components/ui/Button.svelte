@@ -17,6 +17,7 @@
     background-color: transparent;
     padding: 25px 35px;
     margin-top: 8px;
+
     > :global(span),
     > :global(*) {
       font-family: Gilroy;
@@ -32,12 +33,15 @@
       transition: transform ease 0.3s;
       transform: translateY(-8px);
     }
+
     @media screen and (max-width: 420px) {
       padding: 15px 25px;
     }
+
     &:focus {
       outline: 0;
     }
+
     &:after {
       content: '';
       position: absolute;
@@ -51,6 +55,7 @@
       z-index: 1;
       background: var(--accent-gradient);
     }
+
     &:before {
       content: '';
       position: absolute;
@@ -75,6 +80,7 @@
         transform: translateY(0);
       }
     }
+
     &.circle {
       padding: 22px 25px 25px 20px;
       &:after,
@@ -84,9 +90,11 @@
         padding-top: 100%;
         height: auto;
       }
+
       &:after {
         transform: translate(-5px, -8px) skew(0deg, 0deg);
       }
+
       &:before {
         transform: skew(0deg, 0deg);
       }
@@ -97,6 +105,7 @@
         }
       }
     }
+
     &.light {
       margin-top: 0;
       padding: 15px 25px;
@@ -105,11 +114,13 @@
         z-index: 5;
         transform: translateY(3px);
       }
+
       &:after {
         transform: translate(0px, 0px) skew(-5deg, 0deg);
         background: transparent;
         border: solid 2px rgba(102, 146, 255, 0.4);
       }
+
       &:before {
         background: rgba(102, 146, 255, 1);
         opacity: 0;
@@ -123,6 +134,7 @@
         &:after {
           transform: translate(0, 0) skew(-5deg, 0deg);
         }
+
         &:before {
           opacity: 0.1;
         }

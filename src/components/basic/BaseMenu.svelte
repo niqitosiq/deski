@@ -53,6 +53,7 @@
       margin-top: 25px;
     }
   }
+
   .item {
     display: inline;
     font-family: 'Gilroy';
@@ -63,57 +64,72 @@
     color: #fff;
     opacity: 0.4;
     transition: opacity ease 0.3s;
+
     &:not(:last-child) {
       margin-right: 50px;
     }
+
     &:hover {
       opacity: 1;
     }
   }
+
   .logo {
     margin-right: 108px;
     :global(svg) {
       width: 78px;
       height: 24px;
+
       @media screen and (max-width: 848px) {
         width: 90px;
         height: 28px;
       }
     }
+
     @media screen and (max-width: 1675px) {
       margin-right: 80px;
     }
+
     @media screen and (max-width: 1421px) {
       margin-right: 50px;
     }
+
     @media screen and (max-width: 849px) {
       margin-top: 10px;
     }
   }
+
   .list {
     @media screen and (max-width: 1354px) {
       display: none;
     }
   }
+
   .connection {
     display: flex;
     width: 100%;
     max-width: 613px;
+
     @media screen and (max-width: 1647px) {
       justify-content: flex-end;
     }
+
     @media screen and (max-width: 1644px) {
       max-width: 550px;
     }
+
     @media screen and (max-width: 1617px) {
       max-width: 520px;
     }
+
     @media screen and (max-width: 1587px) {
       max-width: 400px;
     }
+
     @media screen and (max-width: 1467px) {
       max-width: 350px;
     }
+
     @media screen and (max-width: 848px) {
       max-width: 100%;
       order: 1;
@@ -121,51 +137,107 @@
       position: relative;
     }
   }
+
   .socials {
     display: flex;
     align-items: center;
     width: 100%;
     max-width: 140px;
     flex-shrink: 0;
+
     @media screen and (max-width: 425px) {
       max-width: 130px;
     }
+
     @media screen and (max-width: 340px) {
       max-width: 110px;
     }
   }
+
   .contact {
     display: flex;
     align-items: center;
     margin-left: 54px;
     width: 100%;
-    max-width: 198px;
+    max-width: 180px;
     flex-shrink: 0;
+
     @media screen and (max-width: 1647px) {
       display: none;
     }
+
     @media screen and (max-width: 1354px) {
       display: flex;
     }
+
+    @media screen and (max-width: 407px) {
+      margin-left: 48px;
+    }
+
+    @media screen and (max-width: 397px) {
+      margin-left: 45px;
+    }
+
     @media screen and (max-width: 394px) {
       margin-left: 30px;
     }
+
+    @media screen and (max-width: 383px) {
+      margin-left: 25px;
+    }
+
+    @media screen and (max-width: 375px) {
+      max-width: 165px;
+      margin-left: 37px;
+    }
+
     @media screen and (max-width: 370px) {
       max-width: 145px;
     }
+
+    @media screen and (max-width: 369px) {
+      margin-left: 40px;
+    }
+
+    @media screen and (max-width: 357px) {
+      margin-left: 30px;
+    }
+
+    @media screen and (max-width: 320px) {
+      margin-left: 20px;
+    }
+
+    @media screen and (max-width: 295px) {
+      max-width: 130px;
+    }
   }
+
   .call {
     display: flex;
     flex-direction: column;
     margin-left: 50px;
     flex-shrink: 0;
+
     @media screen and (max-width: 848px) {
       position: absolute;
       right: 0;
       top: 100%;
       margin-top: 25px;
     }
+
+    span {
+      @media screen and (max-width: 330px) {
+        font-size: 10px;
+      }
+    }
+
+    :global(.light) {
+      @media screen and (max-width: 330px) {
+        padding: 10px 20px;
+      }
+    }
   }
+
   .seconds {
     font-family: Gilroy;
     font-size: 14px;
@@ -175,5 +247,9 @@
     color: var(--text-transparent);
     text-align: left;
     margin-top: 10px;
+
+    @media screen and (max-width: 330px) {
+      font-size: 12px;
+    }
   }
 </style>

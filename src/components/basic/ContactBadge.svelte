@@ -35,6 +35,7 @@
     width: 100%;
     justify-content: space-between;
     align-items: center;
+
     &.labeled {
       align-items: flex-end;
       :global(svg) {
@@ -55,9 +56,19 @@
     font-style: normal;
     font-weight: 700;
     text-align: left;
-    @media screen and (max-width: 370px) {
+
+    @media screen and (max-width: 375px) {
+      font-size: 16px;
+    }
+
+    @media screen and (max-width: 369px) {
       font-size: 14px;
     }
+
+    @media screen and (max-width: 295px) {
+      font-size: 12px;
+    }
+
     &.size--md {
       font-family: Gilroy;
       font-size: 24px;
@@ -66,6 +77,7 @@
       line-height: 29px;
       letter-spacing: 0em;
       text-align: left;
+
       @media screen and (max-width: 1520px) {
         font-size: 18px;
       }
