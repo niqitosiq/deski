@@ -39,6 +39,7 @@
     :global(.social) {
       width: 30px;
       height: 30px;
+
       :global(svg) {
         width: 16px;
         height: 16px;

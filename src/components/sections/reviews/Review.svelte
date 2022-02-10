@@ -1,7 +1,7 @@
 <script>
   import Attachment from '@/components/basic/Attachment.svelte'
   import Gallery from '@/components/gallery/Gallery.svelte'
-import { DEFAULT_MODAL_CONFIG } from '@/consts/modals';
+  import { DEFAULT_MODAL_CONFIG } from '@/consts/modals'
   import { getContext } from 'svelte'
 
   export let align
@@ -88,6 +88,7 @@ import { DEFAULT_MODAL_CONFIG } from '@/consts/modals';
     display: flex;
     align-items: flex-end;
     position: relative;
+
     @media screen and (max-width: 1200px) {
       max-width: calc(50% - 25px);
     }
@@ -99,6 +100,7 @@ import { DEFAULT_MODAL_CONFIG } from '@/consts/modals';
     @media screen and (max-width: 450px) {
       flex-direction: column;
       align-items: flex-start;
+      margin-bottom: 80px;
     }
 
     &.right {
@@ -112,6 +114,9 @@ import { DEFAULT_MODAL_CONFIG } from '@/consts/modals';
       @media screen and (max-width: 720px) {
         margin: 0;
         margin-bottom: 30px;
+      }
+      @media screen and (max-width: 450px) {
+        margin-bottom: 80px;
       }
     }
   }
@@ -158,6 +163,8 @@ import { DEFAULT_MODAL_CONFIG } from '@/consts/modals';
     @media screen and (max-width: 450px) {
       order: 1;
       margin-top: -10px;
+      position: absolute;
+      top: calc(100% + 30px);
     }
   }
 

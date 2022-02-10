@@ -25,7 +25,7 @@
     position: relative;
     display: flex;
     justify-content: space-between;
-    margin-top: 235px;
+    margin-top: 150px;
     margin-bottom: 115px;
 
     &::before {
