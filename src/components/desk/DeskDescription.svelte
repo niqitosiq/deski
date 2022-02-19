@@ -16,6 +16,10 @@
   .desk-description {
     margin-bottom: 20px;
     padding-right: 20px;
+
+    @media screen and (max-width: 320px) {
+      margin-bottom: 10px;
+    }
   }
 
   .label {

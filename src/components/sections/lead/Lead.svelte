@@ -48,6 +48,16 @@
         left: -10%;
       }
     }
+
+    :global(.communication) {
+      @media screen and (max-width: 320px) {
+        padding-left: 10px;
+      }
+
+      @media screen and (max-width: 320px) {
+        padding-left: 5px;
+      }
+    }
   }
 
   .wrapper {

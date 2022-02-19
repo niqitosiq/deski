@@ -67,9 +67,11 @@
   #contacts {
     padding-bottom: 300px;
     margin-top: 100px;
+
     @media screen and (max-width: 1240px) {
       margin-top: 200px;
     }
+
     @media screen and (max-width: 720px) {
       margin-top: 80px;
     }
@@ -84,22 +86,27 @@
     letter-spacing: 0em;
     text-align: left;
     margin-bottom: 20px;
+
     @media screen and (max-width: 1650px) {
       font-size: 44px;
       line-height: 42px;
     }
+
     @media screen and (max-width: 1500px) {
       font-size: 38px;
       line-height: 42px;
     }
+
     @media screen and (max-width: 1320px) {
       font-size: 32px;
       line-height: 38px;
       flex-shrink: 0;
     }
+
     @media screen and (max-width: 790px) {
       text-align: center;
     }
+
     @media screen and (max-width: 520px) {
       font-size: 28px;
       line-height: 34px;
@@ -135,15 +142,22 @@
       margin-bottom: 15px;
       :global(.wrapper) {
         margin-left: 20px;
+
+        @media screen and (max-width: 768px) {
+          margin-left: 15px;
+        }
       }
     }
+
     @media screen and (max-width: 1280px) {
       width: 100%;
       margin-right: 100px;
     }
+
     @media screen and (max-width: 1100px) {
       flex-wrap: wrap;
     }
+
     @media screen and (max-width: 790px) {
       justify-content: center;
       margin-right: 0;
@@ -154,19 +168,23 @@
     justify-content: flex-end;
     a {
       margin-left: 15px;
+
       @media screen and (max-width: 1280px) {
         margin-bottom: 15px;
       }
+
       @media screen and (max-width: 790px) {
         margin-left: 0;
       }
     }
+
     @media screen and (max-width: 1280px) {
       flex-direction: column;
       align-items: flex-end;
       width: auto;
       flex-shrink: 0;
     }
+
     @media screen and (max-width: 790px) {
       flex-direction: column;
       align-items: center;
@@ -187,6 +205,7 @@
       margin-left: 10px;
       width: 44px;
       height: 44px;
+
       @media screen and (max-width: 1520px) {
         width: 30px;
         height: 30px;
@@ -211,6 +230,7 @@
       margin-right: 10px;
       width: 26px;
       height: 26px;
+
       @media screen and (max-width: 1520px) {
         width: 20px;
         height: 20px;
