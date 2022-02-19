@@ -98,7 +98,6 @@
   .description {
     display: flex;
     flex-wrap: wrap;
-    align-items: center;
     padding: 20px 0px;
 
     :global(.desk-description:nth-child(1)) {
@@ -120,5 +119,14 @@
 
   .more {
     margin-left: 40px;
+
+    :global(.light) {
+      margin-top: 15px;
+    }
+
+    @media screen and (max-width: 795px) {
+      margin-left: auto;
+      margin-right: auto;
+    }
   }
 </style>

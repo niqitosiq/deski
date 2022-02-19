@@ -64,10 +64,22 @@
 <style lang="scss">
   .head {
     display: flex;
+
+    @media screen and (max-width: 952px) {
+      flex-direction: column;
+    }
   }
 
   .gallery {
     width: 50%;
+
+    @media screen and (max-width: 1080px) {
+      width: 60%;
+    }
+
+    @media screen and (max-width: 952px) {
+      width: 100%;
+    }
   }
 
   .description {
@@ -77,6 +89,16 @@
     display: flex;
     justify-content: center;
     flex-direction: column;
+
+    @media screen and (max-width: 1080px) {
+      width: 40%;
+    }
+
+    @media screen and (max-width: 952px) {
+      width: 100%;
+      padding-left: 0;
+      margin-top: 20px;
+    }
   }
 
   .article-info {

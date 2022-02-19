@@ -33,6 +33,7 @@
     width: 80%;
     right: 0;
     z-index: -1;
+
     @media screen and (max-width: 1300px) {
       width: 100%;
     }
@@ -54,28 +55,30 @@
     line-height: 64px;
     letter-spacing: 0em;
     text-align: left;
-
     color: #fff;
-
     max-width: 830px;
 
     @media screen and (max-width: 1540px) {
       font-size: 42px;
       line-height: 55px;
     }
+
     @media screen and (max-width: 1400px) {
       font-size: 36px;
       line-height: 48px;
       min-width: 525px;
     }
+
     @media screen and (max-width: 1240px) {
       width: 100%;
       min-width: 0px;
     }
+
     @media screen and (max-width: 560px) {
       font-size: 30px;
       line-height: 36px;
     }
+
     @media screen and (max-width: 420px) {
       font-size: 28px;
       line-height: 34px;
@@ -85,6 +88,7 @@
   .reviews {
     margin-top: 37px;
     padding: 0px 122px;
+
     @media screen and (max-width: 1500px) {
       padding: 0;
     }

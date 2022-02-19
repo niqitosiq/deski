@@ -25,7 +25,7 @@
     position: relative;
     display: flex;
     justify-content: space-between;
-    margin-top: 235px;
+    margin-top: 150px;
     margin-bottom: 115px;
 
     &::before {
@@ -46,6 +46,16 @@
       @media screen and (max-width: 618px) {
         width: 120%;
         left: -10%;
+      }
+    }
+
+    :global(.communication) {
+      @media screen and (max-width: 320px) {
+        padding-left: 10px;
+      }
+
+      @media screen and (max-width: 320px) {
+        padding-left: 5px;
       }
     }
   }

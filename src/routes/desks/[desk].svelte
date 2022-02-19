@@ -34,5 +34,13 @@
 <style lang="scss">
   .desk-page {
     padding: 30px 0;
+
+    :global(.head) {
+      margin-top: 40px;
+    }
+
+    :global(.article-info) {
+      margin-top: 40px;
+    }
   }
 </style>

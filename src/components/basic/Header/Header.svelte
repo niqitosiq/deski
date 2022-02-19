@@ -13,12 +13,15 @@
     display: flex;
     justify-content: space-between;
     padding-top: 36px;
+
     @media screen and (max-width: 848px) {
       flex-direction: column;
     }
+
     @media screen and (max-width: 620px) {
       padding-top: 40px;
     }
+
     @media screen and (max-width: 420px) {
       padding-top: 20px;
     }
