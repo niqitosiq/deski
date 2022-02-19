@@ -225,14 +225,12 @@
       margin-top: 25px;
     }
 
-    span {
-      @media screen and (max-width: 330px) {
+    @media screen and (max-width: 330px) {
+      span {
         font-size: 10px;
       }
-    }
 
-    :global(.light) {
-      @media screen and (max-width: 330px) {
+      :global(.light) {
         padding: 10px 20px;
       }
     }
