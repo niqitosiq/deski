@@ -1,6 +1,7 @@
 <script>
   import Icon from '@/components/ui/Icon.svelte'
   import Button from '@/components/ui/Button.svelte'
+  import IMask from 'imask'
 
   export let title
 
@@ -19,6 +20,16 @@
 
   function toggle() {
     success = !success
+  }
+
+  let userName = ''
+
+  let phonePipe = IMask.createPipe({
+    mask: '+{7} (000) 000-00-00',
+  })
+
+  function bindMaskedValue(e) {
+    userName = phonePipe(e.target.value)
   }
 </script>
 
@@ -47,7 +58,13 @@
     <label for="phone" class="label">Введите номер телефона</label>
     <div class="phone">
       <Icon name="phone2" />
-      <input type="text" id="phone" placeholder={currentMethod.placeholder} />
+      <input
+        type="text"
+        id="phone"
+        placeholder={currentMethod.placeholder}
+        value={userName}
+        on:input={bindMaskedValue}
+      />
     </div>
     <Button styling="order" on:click={toggle}>
       <span>ЗАКАЗАТЬ ЗВОНОК</span>
