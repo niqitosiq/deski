@@ -1,16 +1,37 @@
 <script>
   import Icon from '@/components/ui/Icon.svelte'
   import Button from '@/components/ui/Button.svelte'
+  import IMask from 'imask'
 
   export let title
 
   export let smallMargin
 
   let methods = [
-    { label: 'Телефон', icon: 'phone3', placeholder: 'Телефон' },
-    { label: 'Viber', icon: 'viber', placeholder: 'Имя или телефон' },
-    { label: 'Telegram', icon: 'telegram', placeholder: 'Имя или телефон' },
-    { label: 'WhatsApp', icon: 'whatsapp', placeholder: 'Телефон' },
+    {
+      label: 'Телефон',
+      icon: 'phone3',
+      placeholder: 'Телефон',
+      areLettersAllowed: false,
+    },
+    {
+      label: 'Viber',
+      icon: 'viber',
+      placeholder: 'Имя или телефон',
+      areLettersAllowed: true,
+    },
+    {
+      label: 'Telegram',
+      icon: 'telegram',
+      placeholder: 'Имя или телефон',
+      areLettersAllowed: true,
+    },
+    {
+      label: 'WhatsApp',
+      icon: 'whatsapp',
+      placeholder: 'Телефон',
+      areLettersAllowed: false,
+    },
   ]
 
   let currentMethod = methods[0]
@@ -19,6 +40,32 @@
 
   function toggle() {
     success = !success
+  }
+
+  let userName = ''
+
+  let isPhone = true
+
+  const phonePipe = IMask.createPipe({
+    mask: '+{7} (000) 000-00-00',
+  })
+
+  function bindMaskedValue(e) {
+    const value = e.target.value
+    const doesValueContainNubmers = /[0-9]/.test(value)
+    const doesValueContainLetters = /[A-Za-zА-Яа-яЁё]/.test(value)
+
+    if (doesValueContainLetters && !doesValueContainNubmers) {
+      isPhone = false
+    }
+
+    if (!doesValueContainLetters && doesValueContainNubmers) {
+      isPhone = true
+    }
+
+    if (!currentMethod.areLettersAllowed || isPhone) {
+      e.target.value = phonePipe(value)
+    }
   }
 </script>
 
@@ -47,7 +94,13 @@
     <label for="phone" class="label">Введите номер телефона</label>
     <div class="phone">
       <Icon name="phone2" />
-      <input type="text" id="phone" placeholder={currentMethod.placeholder} />
+      <input
+        type="text"
+        id="phone"
+        placeholder={currentMethod.placeholder}
+        value={userName}
+        on:input={bindMaskedValue}
+      />
     </div>
     <Button styling="order" on:click={toggle}>
       <span>ЗАКАЗАТЬ ЗВОНОК</span>
