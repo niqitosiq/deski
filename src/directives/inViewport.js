@@ -38,7 +38,7 @@ function viewport(element, name = 'default', config = {}) {
 function viewClass(element) {
   element.classList.add('animate');
   viewport(element, 'class', {
-    rootMargin: '-100px 0px -50% 0px',
+    rootMargin: '-100px -50% -300px -50%',
   });
 }
 

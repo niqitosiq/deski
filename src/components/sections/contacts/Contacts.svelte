@@ -65,7 +65,6 @@
 
 <style lang="scss">
   #contacts {
-    padding-bottom: 300px;
     margin-top: 100px;
 
     @media screen and (max-width: 1240px) {
